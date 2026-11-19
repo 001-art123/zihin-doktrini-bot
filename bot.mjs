@@ -4,7 +4,7 @@ import { SINGLE_DOCTRINES, CAROUSEL_DOCTRINES } from './src/doctrines.mjs';
 import { renderSingleStatueCard, renderCarouselSlides } from './src/renderer.mjs';
 import { publishSinglePost, publishCarouselPost } from './src/publisher.mjs';
 
-// Environment credentials (from process.env or defaults)
+// Environment credentials
 const PAGE_TOKEN = process.env.PAGE_ACCESS_TOKEN || 'EAAQDhiLqN5gBTDnVKOj8xAGoH7oCl6vN1hEXoCZCosGK3MLBDI2vybsoNVQB4t66bAu1nLXh7GfMSbZCrCPmNZAgorrSJDHfpD5CFGZBoR4Pd5qRRuZCV0qDZCJheJ5Et8RUIuNBt5LUatDFL4J1MTpO8Iu0Y98QAbkeZAiwgN3ZBCg1P9fECmu0NgsKHETxZCWcbvQ31oZB6u';
 const PAGE_ID = process.env.PAGE_ID || '1450379981489571';
 const IG_USER_ID = process.env.IG_USER_ID || '17841459536500089';
@@ -24,18 +24,28 @@ if (!fs.existsSync(tempDir)) {
   fs.mkdirSync(tempDir, { recursive: true });
 }
 
+// Calculate deterministic day of year for progressive content rotation
+const now = new Date();
+const startOfYear = new Date(now.getFullYear(), 0, 0);
+const diff = now - startOfYear;
+const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+
 async function run() {
   console.log(`========================================`);
-  console.log(`🏛 ZİHİN DOKTRİNİ BULUT YAYIN BOTU`);
-  console.log(`⏰ Zaman Dilimi (Slot): ${slot.toUpperCase()}`);
+  console.log(`🏛 ZİHİN DOKTRİNİ 7/24 BULUT YAYIN BOTU`);
+  console.log(`⏰ Hedef Seans: ${slot.toUpperCase()}`);
+  console.log(`📅 Gün İndeksi: ${dayOfYear}`);
   console.log(`========================================\n`);
 
   if (slot === 'noon') {
-    // NOON SLOT -> 5-Slide Deep Carousel
-    console.log('📌 ÖĞLE SEANSI: 5 Slaytlık Kaydırmalı Karusel Hazırlanıyor...');
-    const carouselIndex = Math.floor(Math.random() * CAROUSEL_DOCTRINES.length);
+    // ----------------------------------------------------
+    // KURAL: HER GÜN ÖĞLEN 12:30 SEANSI KESİNLİKLE 5 SLAYTLIK KAYDIRMALI KARUSELDİR!
+    // ----------------------------------------------------
+    console.log('📌 ÖĞLE SEANSI (12:30): 5 Slaytlık Kaydırmalı Karusel Hazırlanıyor...');
+    const carouselIndex = dayOfYear % CAROUSEL_DOCTRINES.length;
     const selectedCarousel = CAROUSEL_DOCTRINES[carouselIndex];
 
+    console.log(`Seçilen Karusel Paketi: "${selectedCarousel.cover.line1} ${selectedCarousel.cover.line2_gold}"`);
     const slidePaths = await renderCarouselSlides(selectedCarousel, tempDir);
     console.log(`Slaytlar render edildi: ${slidePaths.length} adet 1080x1350 görsel`);
 
@@ -47,13 +57,18 @@ async function run() {
       IG_USER_ID
     );
 
-    console.log('\n✅ Karusel yayını başarıyla tamamlandı!', result);
+    console.log('\n✅ 5 Slaytlık Karusel yayını başarıyla tamamlandı!', result);
   } else {
-    // MORNING or EVENING SLOT -> High-Impact Single Statue Card
+    // ----------------------------------------------------
+    // SABAH (08:30) VE AKŞAM (20:30): TEKLİ SİNEMATİK DOKTRİN KARTI
+    // ----------------------------------------------------
     console.log(`📌 ${slot.toUpperCase()} SEANSI: Heykelli Sinematik Doktrin Kartı Hazırlanıyor...`);
-    const docIndex = Math.floor(Math.random() * SINGLE_DOCTRINES.length);
+    // Morning gets dayOfYear, Evening gets (dayOfYear + 1) offset so they differ
+    const offset = slot === 'evening' ? 1 : 0;
+    const docIndex = (dayOfYear * 2 + offset) % SINGLE_DOCTRINES.length;
     const selectedDoc = SINGLE_DOCTRINES[docIndex];
 
+    console.log(`Seçilen Doktrin: "${selectedDoc.title_gold} ${selectedDoc.title_white}"`);
     const cardPath = path.join(tempDir, 'single_card.jpg');
     await renderSingleStatueCard(selectedDoc, cardPath);
     console.log(`Görsel render edildi: ${cardPath}`);
