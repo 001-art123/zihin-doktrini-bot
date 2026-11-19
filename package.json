@@ -1,0 +1,16 @@
+{
+  "name": "zihin-doktrini-bot",
+  "version": "1.0.0",
+  "description": "Zihin Doktrini 100% Autonomous 24/7 Cloud Meta Publisher",
+  "type": "module",
+  "main": "bot.mjs",
+  "scripts": {
+    "start": "node bot.mjs",
+    "morning": "node bot.mjs --slot morning",
+    "noon": "node bot.mjs --slot noon",
+    "evening": "node bot.mjs --slot evening"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.65"
+  }
+}
