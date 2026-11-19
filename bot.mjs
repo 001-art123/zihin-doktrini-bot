@@ -65,7 +65,7 @@ async function run() {
   } else {
     // ----------------------------------------------------
     // SABAH (08:30) VE AKŞAM (20:30): TEKLİ SİNEMATİK DOKTRİN KARTI
-    // 10 gün boyunca 20 farklı benzersiz doktrin (#001'den #020'ye)
+    // 10 gün boyunca 20 farklı benzersiz doktrin (Kural #01'den #20'ye)
     // ----------------------------------------------------
     console.log(`📌 ${slot.toUpperCase()} SEANSI: Heykelli Sinematik Doktrin Kartı Hazırlanıyor...`);
     const isEvening = slot === 'evening';
@@ -73,20 +73,23 @@ async function run() {
     const docIndex = globalSeq % SINGLE_DOCTRINES.length;
     const selectedDoc = SINGLE_DOCTRINES[docIndex];
 
-    const postNumber = String(globalSeq + 1).padStart(3, '0');
-    console.log(`Seçilen Doktrin [No: #${postNumber}]: "${selectedDoc.title_gold} ${selectedDoc.title_white}"`);
+    console.log(`Seçilen Doktrin [${selectedDoc.ruleCode}]: "${selectedDoc.line1} ${selectedDoc.line2_highlight}"`);
 
-    const fullCaption = `🏛 ZİHİN DOKTRİNİ #${postNumber}
-${selectedDoc.title_gold} ${selectedDoc.title_white}
+    const fullCaption = `🏛 ${selectedDoc.category} • ${selectedDoc.ruleCode}
 
-${selectedDoc.captionSummary}
+"${selectedDoc.line1} ${selectedDoc.line2_highlight} ${selectedDoc.line3} ${selectedDoc.line4_gold}"
+— ${selectedDoc.author} (${selectedDoc.authorTitle})
+
+${selectedDoc.captionHook}
+
+🏛 Kendi zihnini fethetmeyen, hiçbir şeyi fethedemez.
 
 📍 Zihin disiplini için takip et: @zihindoktrini
-💾 İleride tekrar hatırlamak için bu gönderiyi KAYDET.
-👥 Zihnini güçlendirmesini istediğin bir dostunla PAYLAŞ.
+💾 Zihninde tutmak için KAYDET.
+👥 Bu duruşu hikayende PAYLAŞ.
 
 • • •
-#zihindoktrini #stoacılık #felsefe #özdisiplin #irade #zihin #kişiselgelişim #motivasyon #stoic #bilgelik`;
+#zihindoktrini #stoacılık #${selectedDoc.author.replace(/[^a-zA-Z]/g, '').toLowerCase()} #felsefe #özdisiplin #zihniyet #motivasyon #bilgelik`;
 
     const cardPath = path.join(tempDir, 'single_card.jpg');
     await renderSingleStatueCard(selectedDoc, cardPath);

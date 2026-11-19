@@ -1,177 +1,237 @@
 /**
  * ZİHİN DOKTRİNİ - İÇERİK KÜTÜPHANESİ
- * 20+ Benzersiz Tekli Doktrin Kartı (10+ Günlük Sabah/Akşam Akışı)
- * 10 Benzersiz 5-Slaytlık Kaydırmalı Karusel (10 Günlük Öğle Akışı)
+ * 20 Benzersiz Tekli Doktrin Kartı (Günde 2 Adet -> 10 Gün Boyunca Sıfır Tekrar)
+ * 10 Benzersiz 5-Slaytlık Kaydırmalı Karusel (Günde 1 Adet -> 10 Gün Boyunca Sıfır Tekrar)
+ * Format: 3 saniyede okunan, vurucu, hikayede paylaşma ve kaydetme odaklı.
  */
 
 export const SINGLE_DOCTRINES = [
   {
-    topic: "KONTROL ÇEMBERİ",
-    title_gold: "KONTROL EDEMEDİĞİN ŞEYLERİN",
-    title_white: "ESİRİ OLMAYI BIRAK.",
-    doctrine: "Hava durumunu, başkalarının fikirlerini ya da dünü değiştiremezsin. Ancak kendi zihnini, kararlarını ve eylemlerini her an yönetebilirsin. Değiştiremeyeceğin şeyler için öfkelenmek, rüzgara kızıp fırtınaya küfretmek gibidir. Enerjini yalnızca yönetebileceğin alana ada.",
-    quote: "— MARCUS AURELIUS",
-    captionSummary: "Kontrol edemediğin şeylerin esiri olmayı bırak.\n\nBaşkalarının düşünceleri, geçmişin yükü veya yarının belirsizliği... Bunlar senin kontrolünde değil. Fakat zihnin, ilkelerin ve tepkilerin tamamen senin elinde."
+    ruleCode: "KURAL #01",
+    category: "ÖZ DİSİPLİN KODU",
+    line1: "Başkalarının zihninde nasıl göründüğünü",
+    line2_highlight: "umursamayı bıraktığın an,",
+    line3: "kendi kaderinin",
+    line4_gold: "tek efendisi olursun.",
+    author: "MARCUS AURELIUS",
+    authorTitle: "Roma İmparatoru • Kendime Düşünceler",
+    captionHook: "Bir insanın en zayıf anı, başkalarının onayına muhtaç hissettiği andır. İnsanların övgüsü seni yüceltmez, yergisi seni küçültmez. Sen sadece kendi karakterinden sorumlusun."
   },
   {
-    topic: "ZAMANIN BEDELİ",
-    title_gold: "ZAMAN KISITLI DEĞİLDİR,",
-    title_white: "BİZ ONUN ÇOĞUNU BOŞA HARCARIZ.",
-    doctrine: "Hayat kısa değildir; biz onu gereksiz insanlara, boş tartışmalara ve ertelemelere saçarak kısaltırız. Kimseye bir kuruşunu kolay kolay vermezsin ama en değerli hazinen olan saatlerini herkesin önüne serersin. Zihnini koru, vaktini koru.",
-    quote: "— SENECA",
-    captionSummary: "Zaman kısıtlı değildir; biz onun çoğunu boşa harcarız.\n\nKimseye bir kuruşunu kolayca vermeyen insanlar, konu zamanları olduğunda en cömert müsriflere dönüşür. Saatlerini gereksiz tartışmalara ve boş şeylere heba etmeyi bırak."
+    ruleCode: "KURAL #02",
+    category: "ZİHİNSEL KALKAN",
+    line1: "Seni en çok tüketen şey;",
+    line2_highlight: "hayır demen gereken insanlara",
+    line3: "defalarca verdiğin",
+    line4_gold: "o gereksiz toleranstır.",
+    author: "SENECA",
+    authorTitle: "Stoacı Filozof • Ahlak Mektupları",
+    captionHook: "Zamanın ve enerjin en kutsal hazinendir. Değerini bilmeyenlere sunduğun her an, kendi ömründen çaldığın bir parçadır. Sınır çizmek kabalık değil, kendine duyduğun saygıdır."
   },
   {
-    topic: "İÇSEL GÜÇ",
-    title_gold: "BAŞINA GELENLER DEĞİL,",
-    title_white: "ONLARA VERDİĞİN TEPKİDİR SENİ YIKAN.",
-    doctrine: "Seni yaralayan şey bir hakaret ya da beklenmedik bir darbe değildir; o darbeye yüklediğin anlamdır. Zihninde yaralanmayı reddedersen, hiçbir şey sana zarar veremez. Olaylar tarafsızdır; onları trajediye ya da zafere dönüştüren yalnızca senin bakış açındır.",
-    quote: "— EPİKTETOS",
-    captionSummary: "Başına gelenler değil, onlara verdiğin tepkidir seni yıkan.\n\nDış dünya sana dokunamaz; seni üzen veya öfkelendiren tek şey o olaya yüklediğin anlamdır. 'Yaralandım' yargısını ortadan kaldır, yaranın kendisi de yok olsun."
+    ruleCode: "KURAL #03",
+    category: "İÇSEL GÜÇ İLKESİ",
+    line1: "Seni yıkan olaylar değil,",
+    line2_highlight: "o olaylara yüklediğin",
+    line3: "kendi yargıların ve",
+    line4_gold: "zayıf beklentilerindir.",
+    author: "EPİKTETOS",
+    authorTitle: "Stoacı Filozof • Encheiridion",
+    captionHook: "Dış dünyadaki fırtınayı durduramazsın; ama yelkenlerini ona göre ayarlayabilirsin. Olaylar tarafsızdır; onları trajediye ya da zafere dönüştüren senin zihnindir."
   },
   {
-    topic: "ZORLUKLARIN ANLAMI",
-    title_gold: "ENGEL YOLUN KENDİSİDİR.",
-    title_white: "ATEŞ KENDİSİNE ATILAN HER ŞEYİ BESİNE DÖNÜŞTÜRÜR.",
-    doctrine: "Eylemin önündeki engel, eylemi ilerletir. Yolun üzerine düşen taş, artık yeni yolun ta kendisidir. Karşına çıkan zorluklardan şikayet etmeyi bırak; güçlü bir ateş her şeyi yakıta çevirir ve daha parlak yanar.",
-    quote: "— MARCUS AURELIUS",
-    captionSummary: "Engel yolun kendisidir.\n\nKüçük bir alev hafif bir rüzgarla söner; oysa büyük bir yangın önüne çıkan her fırtınayı daha da güçlenmek için yakıta dönüştürür. Karşına çıkan zorlukları düşman değil, zihnini dövecek çekiç olarak gör."
+    ruleCode: "KURAL #04",
+    category: "KARAKTER MÜHÜRÜ",
+    line1: "Nasıl iyi biri olacağını",
+    line2_highlight: "tartışarak vakit kaybetme;",
+    line3: "şimdi kalk ve",
+    line4_gold: "bizzat öyle bir insan ol.",
+    author: "MARCUS AURELIUS",
+    authorTitle: "Roma İmparatoru • Kendime Düşünceler",
+    captionHook: "Kelimeler ucuzdur, niyetler görünmezdir. Seni tanımlayan tek şey eylemlerindir. Dünyayı düzeltmeye çalışmadan önce kendi duruşunu kusursuz kıl."
   },
   {
-    topic: "SUSKUNLUK DOKTRİNİ",
-    title_gold: "NE ZAMAN SUSMAN GEREKTİĞİNİ BİLMEK,",
-    title_white: "SÖZ SÖYLEMEKTEN ÇOK DAHA BÜYÜK BİR ERDEMDİR.",
-    doctrine: "Gereksiz her söz, içindeki zihinsel enerjiyi dışarıya sızdıran bir çatlaktır. Haklı olduğunu ispatlamak zorunda değilsin; erdemli yaşamak konuşmaktan bin kat daha etkilidir. Sessizlik, zayıflık değil; kontrolün mutlak zirvesidir.",
-    quote: "— SENECA",
-    captionSummary: "Ne zaman susman gerektiğini bilmek, söz söylemekten çok daha büyük bir erdemdir.\n\nKendini savunmak, her iddiaya cevap yetiştirmek zorunda değilsin. Zihinsel gücünü boş lakırdılarla tüketme."
+    ruleCode: "KURAL #05",
+    category: "GÜÇ DOKTRİNİ",
+    line1: "Kendisine hükmedemeyen hiç kimse,",
+    line2_highlight: "dünyanın fatihi olsa bile",
+    line3: "asla ve asla",
+    line4_gold: "özgür sayılamaz.",
+    author: "EPİKTETOS",
+    authorTitle: "Stoacı Filozof • Söylevler",
+    captionHook: "Dürtülerinin, anlık zevklerinin ve tembelliğinin esiri olan bir insan kral bile olsa köledir. İsteklerine 'hayır' diyebildiğin gün gerçek gücü tadacaksın."
   },
   {
-    topic: "YALIN KARAKTER",
-    title_gold: "İYİ BİR İNSANIN NASIL OLMASI GEREKTİĞİNİ TARTIŞMAKTAN VAZGEÇ,",
-    title_white: "BİZZAT O İNSAN OL.",
-    doctrine: "Sürekli ahlaktan bahseden ama ahlaksızca yaşayan, sürekli disiplin anlatan ama tembellik yapanlardan olma. Felsefe kelimelerle değil, eylemlerle yaşanır. Dünyayı değiştirmek istiyorsan önce kendi duruşunu kusursuz kıl.",
-    quote: "— MARCUS AURELIUS",
-    captionSummary: "İyi bir insanın nasıl olması gerektiğini tartışmaktan vazgeç, bizzat o insan ol.\n\nKelimeler ucuzdur, eylemler ise gerçeğin ta kendisidir. Başkalarına akıl vermek yerine karakterinle örnek ol."
+    ruleCode: "KURAL #06",
+    category: "ATEŞ KANUNU",
+    line1: "Önüne çıkan engel,",
+    line2_highlight: "yolun ta kendisidir.",
+    line3: "Ateş, üzerine atılan her şeyi",
+    line4_gold: "yakıta dönüştürür.",
+    author: "MARCUS AURELIUS",
+    authorTitle: "Roma İmparatoru • Kendime Düşünceler",
+    captionHook: "Küçük bir alev hafif bir rüzgarla söner; oysa büyük bir yangın önüne çıkan her fırtınayla daha da alevlenir. Zorlukları düşman değil, zihnini dövecek çekiç olarak gör."
   },
   {
-    topic: "İÇ KALENİN GÜCÜ",
-    title_gold: "HİÇ KİMSE SENİN İZNİN OLMADAN",
-    title_white: "SENİ AŞAĞILAYAMAZ VEYA İNCİTEMEZ.",
-    doctrine: "Birisi sana hakaret ettiğinde, incinip incinmeyeceğini belirleyen tek şey sensin. Eğer hakareti ciddiye almazsan rüzgar gibi geçip gider. Zihnini zırhla kapla; kimsenin haddi olmayan düşüncelerinin iç dünyana sızmasına izin verme.",
-    quote: "— EPİKTETOS",
-    captionSummary: "Hiç kimse senin iznin olmadan seni aşağılayamaz veya incitemez.\n\nBir köpeğin havlamasına kırılmazsın; öyleyse cahil bir insanın sözleri neden seni sarsın? Gücünü başkalarının dudaklarına emanet etme."
+    ruleCode: "KURAL #07",
+    category: "SESSİZLİK İLKESİ",
+    line1: "Ne zaman susman gerektiğini bilmek,",
+    line2_highlight: "söz söylemekten çok daha",
+    line3: "büyük ve ezici",
+    line4_gold: "bir erdemdir.",
+    author: "SENECA",
+    authorTitle: "Stoacı Filozof • Bilgenin Sarsılmazlığı",
+    captionHook: "Gereksiz her söz enerjini dışarıya sızdıran bir çatlaktır. Haklı olduğunu kanıtlamak zorunda değilsin. Sessizlik, kontrolün mutlak zirvesidir."
   },
   {
-    topic: "ÖLÜMLÜLÜK BİLİNCİ",
-    title_gold: "HER SABAH KENDİNE FISILDA:",
-    title_white: "BU GÜN HAYATININ SON GÜNÜ OLABİLİR.",
-    doctrine: "Memento Mori: Hayatı sonsuz sananlar en büyük zaman israfçılarıdır. Ölüm korkulacak bir son değil; her anı onurlu, kararlı ve net yaşamak için en keskin pusuladır. Ertelediğin her şey, aslında vazgeçtiğin hayatındır.",
-    quote: "— SENECA",
-    captionSummary: "Her sabah kendine fısılda: Bu gün hayatının son günü olabilir.\n\nÖlüm bilinci seni karamsar yapmaz; aksine küçük meseleleri çöpe atıp gerçekten neyin önemli olduğunu gösterir."
+    ruleCode: "KURAL #08",
+    category: "FARKINDALIK",
+    line1: "Gerçekte acı çektiğimizden çok,",
+    line2_highlight: "kendi hayal gücümüzde",
+    line3: "ve kuruntularımızda",
+    line4_gold: "acı çekeriz.",
+    author: "SENECA",
+    authorTitle: "Stoacı Filozof • Ahlak Mektupları",
+    captionHook: "Korktuğumuz şeylerin çoğu ya asla gerçekleşmez ya da düşündüğümüz kadar yıkıcı olmaz. Gelmemiş yarının felaket senaryolarıyla bugünü katletmeyi bırak."
   },
   {
-    topic: "DİSİPLİN KANUNU",
-    title_gold: "DİSİPLİNİN AĞIRLIĞI GRAMLARLA,",
-    title_white: "PİŞMANLIĞIN AĞIRLIĞI TONLARLA ÖLÇÜLÜR.",
-    doctrine: "Bugün zor geleni yapmak seni yarın özgürleştirir. Kolay olanı seçip ertelemek ise zihninde taşınması imkansız bir pişmanlık yükü biriktirir. Zorluğu göğüsle; acı geçicidir, karakter kalıcıdır.",
-    quote: "— MARCUS AURELIUS",
-    captionSummary: "Disiplinin ağırlığı gramlarla, pişmanlığın ağırlığı tonlarla ölçülür.\n\nKısa vadeli rahatlık, uzun vadeli esarettir. Kendi zihnini fethetmeyen insan hiçbir şeyi yönetemez."
+    ruleCode: "KURAL #09",
+    category: "DİSİPLİN YASASI",
+    line1: "Disiplinin ağırlığı gramlarla,",
+    line2_highlight: "ertelemenin ve pişmanlığın ağırlığı",
+    line3: "ise omuzlarında",
+    line4_gold: "tonlarla ölçülür.",
+    author: "MARCUS AURELIUS",
+    authorTitle: "Roma İmparatoru • Kendime Düşünceler",
+    captionHook: "Bugün zor geleni yapmak seni yarın özgürleştirir. Kolay olanı seçip ertelemek ise zihninde taşınması imkansız bir yük biriktirir. Zorluğu göğüsle."
   },
   {
-    topic: "ARINMA VE SÜKUNET",
-    title_gold: "HİÇBİR ŞEYE İHTİYACI OLMAYAN İNSAN,",
-    title_white: "DÜNYANIN EN ZENGİN İNSANIDIR.",
-    doctrine: "Zenginlik mülklerin çokluğuyla değil, arzuların azlığıyla ölçülür. Dışarıdan gelecek onaylara, eşyalara ve alkışlara muhtaç değilsen, hiçbir güç seni dize getiremez. Gerçek zenginlik kendi kendine yetebilmektir.",
-    quote: "— SENECA",
-    captionSummary: "Hiçbir şeye ihtiyacı olmayan insan, dünyanın en zengin insanıdır.\n\nDaha fazlasına sahip olmak için ruhunu satanlar asla doymaz. Zihnini sadeleştir, gerçek özgürlüğe kavuş."
+    ruleCode: "KURAL #10",
+    category: "KADER SEVGİSİ",
+    line1: "Başına geleni bir lanet değil,",
+    line2_highlight: "karakterini çelik gibi dövecek",
+    line3: "kutsal bir fırsat gibi",
+    line4_gold: "bağrına bas.",
+    author: "MARCUS AURELIUS",
+    authorTitle: "Roma İmparatoru • Amor Fati",
+    captionHook: "Rüzgarın yönünü değiştiremezsin ama yelkenlerini ona göre ayarlayabilirsin. Hayat sana ne fırlatırsa fırlatsın, onu altına dönüştür."
   },
   {
-    topic: "ÖFKE TUZAĞI",
-    title_gold: "ÖFKE İLE HAREKET ETMEK,",
-    title_white: "BAŞKASININ HATASININ BEDELİNİ KENDİNE ÖDETMEKTİR.",
-    doctrine: "Biri seni yanılttığında veya aldattığında öfkeye kapılmak, zehri kendi içip başkasının ölmesini beklemeye benzer. Öfke bir akıl tutulmasıdır. Sakin kal, durumu analiz et ve duygularına teslim olmadan gereken adımı at.",
-    quote: "— SENECA",
-    captionSummary: "Öfke ile hareket etmek, başkasının hatasının bedelini kendine ödetmektir.\n\nKışkırtıldığında içine dön. Kontrolünü kaybeden taraf, savaşı baştan kaybetmiş demektir."
+    ruleCode: "KURAL #11",
+    category: "İÇ DİNGİNLİK",
+    line1: "Öfkeyle verilen her karar,",
+    line2_highlight: "fırtınada yelken açıp",
+    line3: "kayalara çarpmaya",
+    line4_gold: "mahkumdur.",
+    author: "SENECA",
+    authorTitle: "Stoacı Filozof • Öfke Üzerine",
+    captionHook: "Öfke geçici bir deliliktir. O an konuşursan hayatın boyunca telafi edemeyeceğin yaralar açarsın. Sakin kal, kontrolünü kaybeden savaşı baştan kaybeder."
   },
   {
-    topic: "DIŞ ONAY ESARETİ",
-    title_gold: "KENDİ DEĞERİNİ BAŞKALARININ BAKIŞLARINA BIRAKAN,",
-    title_white: "HER RÜZGARDA SAVRULAN BİR YAPRAK GİBİDİR.",
-    doctrine: "Bugün seni alkışlayanlar yarın taşlayabilir. Eğer gururunu övgülere, huzurunu beğenilmeye bağlarsan köleden farksız yaşarsın. Kendini kendi vicdanınla tart; dış dünyanın terazisi her zaman bozuktur.",
-    quote: "— MARCUS AURELIUS",
-    captionSummary: "Kendi değerini başkalarının bakışlarına bırakan, her rüzgarda savrulan bir yaprak gibidir.\n\nSeni övenler seni yüceltmez, seni yerenler seni alçaltmaz. Sen sadece erdeminden ve niyetinden ibaretsin."
+    ruleCode: "KURAL #12",
+    category: "ÖZ DEĞER",
+    line1: "Hiç kimse senin iznin olmadan",
+    line2_highlight: "seni aşağılayamaz,",
+    line3: "sen izin vermedikçe",
+    line4_gold: "seni incitemez.",
+    author: "EPİKTETOS",
+    authorTitle: "Stoacı Filozof • Encheiridion",
+    captionHook: "Bir köpeğin havlamasına kırılmazsın; öyleyse cahil bir insanın sözleri neden seni sarsın? Gücünü başkalarının dudaklarına emanet etme."
   },
   {
-    topic: "ZİHİN DUVARLARI",
-    title_gold: "HAYATIN KALİTESİ,",
-    title_white: "ZİHNİNDEKİ DÜŞÜNCELERİN KALİTESİNE BAĞLIDIR.",
-    doctrine: "Zihnini karanlık, dedikodu ve şikayetlerle beslersen sarayda yaşasan bile zindandasın demektir. Düşüncelerini bir muhafız gibi denetle; oraya girmesine izin verdiğin her fikir ya senin kalkanın olur ya da seni içten içe çürüten hançer.",
-    quote: "— MARCUS AURELIUS",
-    captionSummary: "Hayatın kalitesi, zihnindeki düşüncelerin kalitesine bağlıdır.\n\nDışarıyı kontrol edemezsin ama zihninin kapılarını kime ve neye açacağını sadece sen belirlersin."
+    ruleCode: "KURAL #13",
+    category: "ZAMANIN RUHU",
+    line1: "Zaman kısıtlı değildir;",
+    line2_highlight: "biz onu boş şeylere harcayarak",
+    line3: "kendi ellerimizle",
+    line4_gold: "hızlıca tüketiriz.",
+    author: "SENECA",
+    authorTitle: "Stoacı Filozof • Hayatın Kısalığı Üzerine",
+    captionHook: "Kimseye parasını kolayca vermeyen insanlar, konu zamanları olduğunda en cömert müsriflere dönüşür. Saatlerini boş tartışmalara heba etme."
   },
   {
-    topic: "KORKUNUN İLLÜZYONU",
-    title_gold: "GERÇEKTE ACI ÇEKTİĞİMİZDEN ÇOK,",
-    title_white: "HAYAL GÜCÜMÜZDE ACI ÇEKERİZ.",
-    doctrine: "Korktuğumuz şeylerin çoğu ya asla gerçekleşmez ya da düşündüğümüz kadar yıkıcı olmaz. Zihnin henüz gelmemiş bir geleceğin felaket senaryolarıyla dolup taşmasın. Anı yaşa, bugünün görevini kusursuz yap; yarın geldiğinde onunla yüzleşirsin.",
-    quote: "— SENECA",
-    captionSummary: "Gerçekte acı çektiğimizden çok, hayal gücümüzde acı çekeriz.\n\nKorkuların çoğu sadece zihnin ürettiği gölgelerdir. Işığı yak ve gölgelerin yok oluşunu izle."
+    ruleCode: "KURAL #14",
+    category: "GİZLİ GÜÇ",
+    line1: "Büyük işler başaranlar,",
+    line2_highlight: "planları hakkında",
+    line3: "dünyaya en az",
+    line4_gold: "söz edenlerdir.",
+    author: "MARCUS AURELIUS",
+    authorTitle: "Roma İmparatoru • Kendime Düşünceler",
+    captionHook: "Hedeflerini ulu orta anlatıp enerjini tüketme. Sessizce çalış, inşa et ve bırak başarın senin yerine konuşsun. Boş tenekeler çok ses çıkarır."
   },
   {
-    topic: "KADERİ KUCAKLAMAK",
-    title_gold: "OLAYLARI İSTEDİĞİN GİBİ DEĞİL,",
-    title_white: "OLDUKLARI GİBİ KABULLEN.",
-    doctrine: "Amor Fati: Rüzgarın yönünü değiştiremezsin ama yelkenlerini ona göre ayarlayabilirsin. Başına gelen her şeyi bir talihsizlik değil, aşılması gereken kutsal bir meydan okuma olarak gör. Hayat sana ne fırlatırsa fırlatsın, onu altına dönüştür.",
-    quote: "— EPİKTETOS",
-    captionSummary: "Olayları istediğin gibi değil, oldukları gibi kabullen.\n\nHayatla savaşmayı bıraktığında ve olanı kabullendiğinde, zihninde hiçbir gücün sarsamayacağı bir dinginlik başlar."
+    ruleCode: "KURAL #15",
+    category: "ÖLÜM BİLİNCİ",
+    line1: "Her sabah kendine fısılda:",
+    line2_highlight: "Bu gün hayatının son günü,",
+    line3: "bu aldığın nefes",
+    line4_gold: "son nefesin olabilir.",
+    author: "SENECA",
+    authorTitle: "Stoacı Filozof • Memento Mori",
+    captionHook: "Ölüm bilinci seni karamsar yapmaz; aksine küçük meseleleri çöpe atıp gerçekten neyin önemli olduğunu gösterir. Ertelediğin her şey vazgeçtiğin hayatındır."
   },
   {
-    topic: "ÖZ DİSİPLİN KALESİ",
-    title_gold: "KENDİSİNE HÜKMEDEMEYEN HİÇ KİMSE,",
-    title_white: "ÖZGÜR SAYILAMAZ.",
-    doctrine: "Dürtülerinin, anlık zevklerinin ve tembelliğinin esiri olan bir insan, kral bile olsa köledir. İsteklerine 'hayır' diyebildiğin gün gerçek gücü tadacaksın. Gerçek hükümdarlık tahtta değil, kendi iradende başlar.",
-    quote: "— EPİKTETOS",
-    captionSummary: "Kendisine hükmedemeyen hiç kimse özgür sayılamaz.\n\nAnlık hazların peşinden koşanlar uzun vadeli acılara mahkum olur. Zihnini dizginle, iradeni çelikleştir."
+    ruleCode: "KURAL #16",
+    category: "METANET",
+    line1: "Yara aldığın yer,",
+    line2_highlight: "zamanla senin en güçlü",
+    line3: "ve en sarsılmaz",
+    line4_gold: "zırhın haline gelir.",
+    author: "SENECA",
+    authorTitle: "Stoacı Filozof • Ahlak Mektupları",
+    captionHook: "Kırılan kemik kaynadığında eskisinden daha sert olur; dövülen demir darbelerle çeliğe dönüşür. Yaşadığın acılardan şikayet etme; onlar seni inşa ediyor."
   },
   {
-    topic: "SESSİZ GÜÇ",
-    title_gold: "BÜYÜK İŞLER YAPANLAR,",
-    title_white: "HAKKINDA EN AZ KONUŞANLARDIR.",
-    doctrine: "Hedeflerini, planlarını ve niyetlerini ulu orta anlatıp zihinsel enerjini tüketme. Sessizce çalış, inşa et ve bırak başarın senin yerine konuşsun. Boş tenekeler çok ses çıkarır; dolu olanlar ise ağırlığıyla kendini belli eder.",
-    quote: "— MARCUS AURELIUS",
-    captionSummary: "Büyük işler yapanlar, hakkında en az konuşanlardır.\n\nSözlerini tasarruf et, enerjini hedefine sakla. Bırak eylemlerinin sonucu dünyayı sarsın."
+    ruleCode: "KURAL #17",
+    category: "EYLEM ÇAĞRISI",
+    line1: "Şikayet ettiğin her saniye,",
+    line2_highlight: "kendi gücünü ve kontrolünü",
+    line3: "karşı tarafa",
+    line4_gold: "teslim ediyorsun.",
+    author: "MARCUS AURELIUS",
+    authorTitle: "Roma İmparatoru • Kendime Düşünceler",
+    captionHook: "Şikayet etmek acizliğin en bariz itirafıdır. Ya durumu değiştir, ya bakış açını değiştir ya da sessizce gereğini yap. Ancak asla bir kurban gibi sızlanma."
   },
   {
-    topic: "ACININ DÖNÜŞÜMÜ",
-    title_gold: "YARA ALDIĞIN YER,",
-    title_white: "SENİN EN GÜÇLÜ KORUMAN HALİNE GELECEK.",
-    doctrine: "Kırılan kemik kaynadığında eskisinden daha sert olur; dövülen demir çekiç darbeleriyle çeliğe dönüşür. Yaşadığın acılardan şikayet etme. Onlar seni yok etmek için değil, sarsılmaz bir ruh inşa etmek için karşına çıktı.",
-    quote: "— SENECA",
-    captionSummary: "Yara aldığın yer, senin en güçlü koruman haline gelecek.\n\nHayatın seni vurduğu her darbe, ruhunun zırhını daha da kalınlaştırır. Zorluklar senin en büyük hocandır."
+    ruleCode: "KURAL #18",
+    category: "ÖZGÜRLÜK",
+    line1: "Hiçbir şeye ihtiyacı olmayan,",
+    line2_highlight: "arzularını sıfırlayan insan",
+    line3: "dünyanın en zengin",
+    line4_gold: "hükümdarıdır.",
+    author: "SENECA",
+    authorTitle: "Stoacı Filozof • Ahlak Mektupları",
+    captionHook: "Zenginlik mülklerin çokluğuyla değil, arzuların azlığıyla ölçülür. Dışarıdan gelecek onaya ve eşyaya muhtaç değilsen, hiçbir güç seni dize getiremez."
   },
   {
-    topic: "ŞİKAYETİN ZEHİRİ",
-    title_gold: "ŞİKAYET ETTİĞİN HER SANİYE,",
-    title_white: "GÜCÜNÜ KENDİ ELLERİNLE TESLİM EDİYORSUN.",
-    doctrine: "Şikayet etmek, acizliğin en bariz itirafıdır. Ya durumu değiştir, ya bakış açını değiştir ya da sessizce katlanıp gereğini yap. Ancak asla bir kurban gibi sızlanma. Kurban rolünü seçen insan asla fatih olamaz.",
-    quote: "— MARCUS AURELIUS",
-    captionSummary: "Şikayet ettiğin her saniye, gücünü kendi ellerinle teslim ediyorsun.\n\nSızlanmayı bırak, harekete geç. Zihninde mazeretlere yer açmayan insanı hiçbir fırtına deviremez."
+    ruleCode: "KURAL #19",
+    category: "ZİHİN DUVARI",
+    line1: "Hayatının nihai kalitesi,",
+    line2_highlight: "zihninde barındırdığın",
+    line3: "düşüncelerin asaleti ve",
+    line4_gold: "kalitesiyle eşdeğerdir.",
+    author: "MARCUS AURELIUS",
+    authorTitle: "Roma İmparatoru • Kendime Düşünceler",
+    captionHook: "Zihnini şikayet ve dedikoduyla beslersen sarayda bile zindandasın demektir. Oraya girmesine izin verdiğin her fikir ya kalkanın olur ya da hançerin."
   },
   {
-    topic: "SON NEFES BİLİNCİ",
-    title_gold: "HAYATI KORKUYLA DEĞİL,",
-    title_white: "ONURLA VE HAKKIYLA YAŞA.",
-    doctrine: "Kaç yıl yaşadığın değil, ne kadar derin ve erdemli yaşadığın önemlidir. Bir asır boyunca bomboş savrulan bir ömürdense, bir tek günü bilgece ve dimdik yaşamak bin kat daha kıymetlidir. Zamanını boşa tüketme; her nefesin bir bedeli var.",
-    quote: "— SENECA",
-    captionSummary: "Hayatı korkuyla değil, onurla ve hakkıyla yaşa.\n\nSon günün geldiğinde geriye baktığında pişmanlık değil, gurur dolu bir karakter görmek istiyorsan bugünden başla."
+    ruleCode: "KURAL #20",
+    category: "ASİL MİRAS",
+    line1: "Hayatı korkakça saklanarak değil,",
+    line2_highlight: "onurla, cesaretle ve",
+    line3: "arkanda lekesiz bir duruş",
+    line4_gold: "bırakarak yaşa.",
+    author: "MARCUS AURELIUS",
+    authorTitle: "Roma İmparatoru • Kendime Düşünceler",
+    captionHook: "Kaç yıl yaşadığın değil, ne kadar derin ve erdemli yaşadığın önemlidir. Geride mal mülk değil, sarsılmaz bir karakter mirası bırak."
   }
 ];
 
 export const CAROUSEL_DOCTRINES = [
   {
-    id: "carousel_01_manipulation",
     cover: {
-      tag: "ZİHİN SAVUNMASI",
+      seriesTitle: "DOKTRİN SERİSİ #01",
       line1: "İNSANLARIN SENİ",
       line2_gold: "MANİPÜLE ETMESİNİ",
       line3: "ENGELLEYEN",
@@ -189,8 +249,7 @@ export const CAROUSEL_DOCTRINES = [
           "ona verilebilecek en ezici cevaptır.",
           "",
           "Tepki verdiğin an onların oyun alanına girersin.",
-          "Tepkisizlik ise kontrolün tamamen",
-          "sende olduğunu haykırır."
+          "Tepkisizlik ise kontrolün tamamen sende olduğunu haykırır."
         ],
         author: "— MARCUS AURELIUS"
       },
@@ -204,8 +263,7 @@ export const CAROUSEL_DOCTRINES = [
           "ama gerçekte tek bir taş bile koymazlar.",
           "",
           "Bir insanın niyetini anlamak istiyorsan,",
-          "ne söylediğini tamamen unut;",
-          "ne yaptığına ve ne bedel ödediğine bak."
+          "ne söylediğini tamamen unut; ne yaptığına bak."
         ],
         author: "— SENECA"
       },
@@ -219,8 +277,7 @@ export const CAROUSEL_DOCTRINES = [
           "onun görünmez kölesi olursun.",
           "",
           "Başkalarının takdiri seni daha erdemli yapmaz;",
-          "yergileri de seni asla küçültemez.",
-          "Sen sadece karakterinden sorumlusun."
+          "sen sadece karakterinden sorumlusun."
         ],
         author: "— EPİKTETOS"
       },
@@ -234,8 +291,7 @@ export const CAROUSEL_DOCTRINES = [
           "hiçbir şeyin efendisi olamaz.",
           "",
           "Kendi ilkelerine ters düşen her teklife,",
-          "suçluluk hissetmeden hayır de.",
-          "Sınırların, senin iç kalendir."
+          "suçluluk hissetmeden hayır de. Sınırların iç kalendir."
         ],
         author: "— SENECA"
       }
@@ -244,23 +300,21 @@ export const CAROUSEL_DOCTRINES = [
 
 Dış dünyada seni kontrol etmeye, öfkelendirmeye ya da onayına muhtaç kılmaya çalışan yüzlerce ses var. Zihnin, fethedilmesi imkânsız olan tek iç kalendir. O kaleyi bu 4 demir kuralla koru:
 
-1️⃣ Her eleştiriye cevap vermek zorunda değilsin. Sessizlik, provokatörlere verilebilecek en ezici cevaptır.
-2️⃣ Sözlere değil; eylemlere, fedakarlıklara ve ödenen bedellere bak.
+1️⃣ Her eleştiriye cevap verme. Sessizlik en ezici cevaptır.
+2️⃣ Sözlere değil, eylemlere ve ödenen bedellere bak.
 3️⃣ Beğenilme ve onay arzusunu zihninde tamamen öldür.
 4️⃣ Kendi ilkelerine uymayan her şeye suçluluk hissetmeden hayır de.
 
 📍 Zihin disiplini için takip et: @zihindoktrini
 💾 İleride tekrar hatırlamak için bu karuseli KAYDET.
 👥 Güçlü bir duruş kazanmasını istediğin bir dosta GÖNDER.
-💬 Senin en çok zorlandığın kural hangisi? Yorumlarda buluşalım.
 
 • • •
 #zihindoktrini #stoacılık #marcusaurelius #seneca #epiktetos #manipülasyon #psikoloji #özdisiplin #zihniyet #felsefe #motivasyon #bilgelik`
   },
   {
-    id: "carousel_02_indomitable",
     cover: {
-      tag: "SARSILMAZ ZİHİN",
+      seriesTitle: "DOKTRİN SERİSİ #02",
       line1: "HİÇBİR FELAKETİN",
       line2_gold: "YIKAMAYACAĞI BİR KARAKTER",
       line3: "İNŞA ETMENİN",
@@ -278,8 +332,7 @@ Dış dünyada seni kontrol etmeye, öfkelendirmeye ya da onayına muhtaç kılm
           "kendi acısının mimarı olur.",
           "",
           "Başına gelen felaketleri bir ceza değil,",
-          "karakterini çelik gibi dövecek",
-          "kutsal bir fırsat olarak gör."
+          "karakterini çelik gibi dövecek kutsal bir fırsat olarak gör."
         ],
         author: "— MARCUS AURELIUS"
       },
@@ -292,9 +345,7 @@ Dış dünyada seni kontrol etmeye, öfkelendirmeye ya da onayına muhtaç kılm
           "Güneş parlamak için teşekkür beklemez,",
           "ağaç meyve verirken alkış aramaz.",
           "",
-          "İyilik yap ve yoluna devam et.",
-          "Karşılık beklediğin an tüccar olursun,",
-          "erdemli insan değil."
+          "İyilik yap ve yoluna devam et. Karşılık beklediğin an tüccar olursun."
         ],
         author: "— SENECA"
       },
@@ -304,9 +355,8 @@ Dış dünyada seni kontrol etmeye, öfkelendirmeye ya da onayına muhtaç kılm
         title1: "En kötü ihtimali her sabah",
         title2_gold: "zihninde prova et.",
         lines: [
-          "Premeditatio Malorum:",
-          "Kaybetmekten korktuğun her şeyi",
-          "zihninde şimdiden kaybet.",
+          "Premeditatio Malorum: Kaybetmekten korktuğun",
+          "her şeyi zihninde şimdiden kaybet.",
           "",
           "Felakete önceden hazırlanan zihni,",
           "hiçbir fırtına gafil avlayamaz."
@@ -322,15 +372,14 @@ Dış dünyada seni kontrol etmeye, öfkelendirmeye ya da onayına muhtaç kılm
           "Bir köle imparatordan daha hür,",
           "bir imparator köleden daha esir olabilir.",
           "",
-          "Zihnine hakim olan her insan,",
-          "dünyanın en zengin hükümdarıdır."
+          "Zihnine hakim olan her insan dünyanın en zengin efendisidir."
         ],
         author: "— EPİKTETOS"
       }
     ],
     caption: `🏛 HİÇBİR FELAKETİN YIKAMAYACAĞI BİR KARAKTER İNŞA ETMENİN 4 DEMİR DOKTRİNİ
 
-Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine sızan sudur. Zihnine dış dünyanın zehrini sokmadığın sürece seni hiçbir felaket yıkamaz.
+Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, içine sızan sudur. Zihnine dış dünyanın zehrini sokmadığın sürece seni hiçbir felaket yıkamaz.
 
 1️⃣ Amor Fati: Kaderini sev ve onu yakıt yap.
 2️⃣ Karşılık beklemeden erdemli yaşa.
@@ -345,9 +394,8 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
 #zihindoktrini #stoic #felsefe #amorfati #zihingücü #karakter #özdisiplin #bilgelik`
   },
   {
-    id: "carousel_03_emotional_mastery",
     cover: {
-      tag: "DUYGU YÖNETİMİ",
+      seriesTitle: "DOKTRİN SERİSİ #03",
       line1: "ÖFKE VE DÜRTÜLERİ",
       line2_gold: "SIFIRLAYAN VE ZİHNİ",
       line3: "ÇELİKLEŞTİREN",
@@ -362,11 +410,9 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
         title2_gold: "10 saniye durakla.",
         lines: [
           "Öfke geçici bir deliliktir.",
-          "O an konuşursan, hayatın boyunca",
-          "telafi edemeyeceğin yaralar açarsın.",
+          "O an konuşursan, telafisi olmayan yaralar açarsın.",
           "",
-          "Zihninin kapısına bekçi koy:",
-          "'Bana öfke değil, berrak akıl gerek.'"
+          "Zihninin kapısına bekçi koy: 'Bana öfke değil, berrak akıl gerek.'"
         ],
         author: "— SENECA"
       },
@@ -376,12 +422,10 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
         title1: "Yeryüzüne gökyüzünden",
         title2_gold: "ve uzaktan bak.",
         lines: [
-          "Kozmik Perspektif:",
-          "Kavgaların, hırsların ve endişelerin,",
+          "Kozmik Perspektif: Kavgaların ve hırsların,",
           "sonsuz evrende bir toz tanesi bile değil.",
           "",
-          "Büyük resmi gören insan,",
-          "küçük meselelerde zehirlenmez."
+          "Büyük resmi gören insan, küçük meselelerde zehirlenmez."
         ],
         author: "— MARCUS AURELIUS"
       },
@@ -394,9 +438,7 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
           "Birine öfkelendiğin her an dur ve sor:",
           "'Ben de benzer bir hatayı ne zaman yaptım?'",
           "",
-          "Kendi kusurlarını bilen insan,",
-          "başkalarının cehaletine öfkelenmez,",
-          "yalnızca şefkatle yaklaşır."
+          "Kendi kusurunu bilen, başkasının cehaletine öfkelenmez."
         ],
         author: "— MARCUS AURELIUS"
       },
@@ -406,19 +448,16 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
         title1: "Memento Mori:",
         title2_gold: "Ölümü hatırla.",
         lines: [
-          "Birkaç on yıl sonra hem sen,",
-          "hem de seni öfkelendiren insan yok olacaksınız.",
+          "Birkaç on yıl sonra hem sen, hem de seni öfkelendiren insan yok olacaksınız.",
           "",
-          "Kısacık hayatını kin ve nefretle",
-          "kirletmek, akıllı bir insanın",
-          "yapacağı son şeydir."
+          "Kısacık hayatını kin ve nefretle kirletmek akıllıca değildir."
         ],
         author: "— SENECA"
       }
     ],
     caption: `🏛 ÖFKE VE DÜRTÜLERİ SIFIRLAYAN 4 STOACI SİLİCİ
 
-Öfke bir ateştir; yakmaya önce içinde bulunduğu kabı kavurarak başlar. Zihnini bu ateşten koruyacak 4 kadim kural:
+Öfke bir ateştir; yakmaya önce içinde bulunduğu kaptan başlar. Zihnini koruyacak 4 kural:
 
 1️⃣ Tepki vermeden önce derin bir nefes al ve durakla.
 2️⃣ Kozmik perspektif: Sonsuzlukta hiçbir dert sonsuz değildir.
@@ -433,9 +472,8 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
 #zihindoktrini #öfke #duygusalyönetim #mementomori #stoacılık #marcusaurelius #seneca`
   },
   {
-    id: "carousel_04_iron_discipline",
     cover: {
-      tag: "ÖZ DİSİPLİN",
+      seriesTitle: "DOKTRİN SERİSİ #04",
       line1: "ASLA KAYBETMEYECEK",
       line2_gold: "ÇELİK GİBİ BİR İRADENİN",
       line3: "4 TEMEL",
@@ -452,9 +490,7 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
           "Marcus Aurelius kendine sorardı:",
           "'Yorganın altında pineklemek için mi doğdun?'",
           "",
-          "Günün ilk savaşını yatakta kazanırsan,",
-          "kalan tüm savaşlar senin",
-          "kontrolünde ilerler."
+          "Günün ilk savaşını yatakta kazanırsan, kalan tüm savaşlar senin kontrolünde ilerler."
         ],
         author: "— MARCUS AURELIUS"
       },
@@ -464,12 +500,9 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
         title1: "Motivasyon gelip geçicidir,",
         title2_gold: "disiplin ise ömürlüktür.",
         lines: [
-          "İlham bekleyen insan amatördür.",
-          "Profesyonel ve bilge insan,",
-          "canı istemese dahi görevini yapar.",
+          "İlham bekleyen insan amatördür. Bilge insan canı istemese dahi görevini yapar.",
           "",
-          "Duyguların değil, verdiğin sözler",
-          "senin pusulan olsun."
+          "Duyguların değil, verdiğin sözler pusulan olsun."
         ],
         author: "— SENECA"
       },
@@ -479,11 +512,9 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
         title1: "Yarın yaparım dediğin an,",
         title2_gold: "bugünü öldürürsün.",
         lines: [
-          "Ertelemek, ruhun sessiz intiharıdır.",
-          "Yapılması gerekeni tam şu an yap.",
+          "Ertelemek ruhun sessiz intiharıdır. Yapılması gerekeni tam şu an yap.",
           "",
-          "Hayat yarınlarda değil,",
-          "şu an aldığın nefeste gerçekleşir."
+          "Hayat yarınlarda değil, şu an aldığın nefeste gerçekleşir."
         ],
         author: "— EPİKTETOS"
       },
@@ -493,11 +524,9 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
         title1: "Zorluğu düşman değil,",
         title2_gold: "öğretmen olarak gör.",
         lines: [
-          "Rahatlık karakterin mezarıdır.",
-          "Kendini bilinçli olarak zorluklara maruz bırak.",
+          "Rahatlık karakterin mezarıdır. Kendini bilinçli olarak zorluklara maruz bırak.",
           "",
-          "Konfor alanını terk eden zihin,",
-          "asla eski sınırlarına geri dönmez."
+          "Konfor alanını terk eden zihin, asla eski sınırlarına dönmez."
         ],
         author: "— MUSONIUS RUFUS"
       }
@@ -519,9 +548,8 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
 #zihindoktrini #özdisiplin #irade #stoacılık #marcusaurelius #motivasyon #başarı`
   },
   {
-    id: "carousel_05_energy_drain",
     cover: {
-      tag: "ENERJİ KORUMASI",
+      seriesTitle: "DOKTRİN SERİSİ #05",
       line1: "ZAMANINI VE ENERJİNİ",
       line2_gold: "ÇALANLARDAN KORUNMANIN",
       line3: "4 STOACI",
@@ -535,11 +563,9 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
         title1: "Mazeret uydurmadan",
         title2_gold: "net bir dille 'Hayır' de.",
         lines: [
-          "Mazeret sunmak zayıflık işaretidir.",
-          "İstemediğin hiçbir şeye borçlu değilsin.",
+          "Mazeret sunmak zayıflık işaretidir. İstemediğin hiçbir şeye borçlu değilsin.",
           "",
-          "'Hayır' kelimesi tam bir cümledir;",
-          "açıklama gerektirmez."
+          "'Hayır' kelimesi tam bir cümledir; açıklama gerektirmez."
         ],
         author: "— SENECA"
       },
@@ -550,8 +576,7 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
         title2_gold: "insanlardan derhal uzaklaş.",
         lines: [
           "Negatiflik bulaşıcı bir vebadır.",
-          "Sürekli dert yanan ama çözüm aramayanlar,",
-          "senin iç huzurunu vampir gibi emer.",
+          "Sürekli dert yananlar iç huzurunu vampir gibi emer.",
           "",
           "Kendi bahçeni koru."
         ],
@@ -563,11 +588,9 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
         title1: "Cahillerle tartışmaya girmekten",
         title2_gold: "vazgeç.",
         lines: [
-          "Haklılığını kanıtlama hırsı,",
-          "en büyük enerji hırsızıdır.",
+          "Haklılığını kanıtlama hırsı en büyük enerji hırsızıdır.",
           "",
-          "Anlamamakta ısrar edene susarak cevap ver.",
-          "Sessizlik, cehaletin en büyük aynasıdır."
+          "Anlamamakta ısrar edene susarak cevap ver. Sessizlik en büyük aynadır."
         ],
         author: "— EPİKTETOS"
       },
@@ -577,11 +600,9 @@ Fırtınalı bir denizde gemiyi batıran suyun kendisi değil, geminin içine s�
         title1: "Başkalarının hayatını merak etmeyi",
         title2_gold: "tamamen bırak.",
         lines: [
-          "Başkalarının ne yaptığıyla ilgilenmek,",
-          "kendi potansiyelini çöpe atmaktır.",
+          "Başkalarının ne yaptığıyla ilgilenmek, kendi potansiyelini çöpe atmaktır.",
           "",
-          "Gözünü sadece kendi yoluna dik.",
-          "Zirveye bakan, yoldaki çakıllara takılmaz."
+          "Gözünü sadece kendi yoluna dik. Zirveye bakan çakıllara takılmaz."
         ],
         author: "— MARCUS AURELIUS"
       }
@@ -603,9 +624,8 @@ Zaman en değerli sermayendir; onu hak etmeyenlerin eline bırakma. Enerjini kor
 #zihindoktrini #zaman #enerji #sınırlar #felsefe #özsaygı`
   },
   {
-    id: "carousel_06_inner_solitude",
     cover: {
-      tag: "İÇ HUZUR",
+      seriesTitle: "DOKTRİN SERİSİ #06",
       line1: "GÜRÜLTÜLÜ DÜNYADA",
       line2_gold: "SARSILMAZ BİR İÇ HUZURA",
       line3: "ULAŞMANIN",
@@ -620,8 +640,7 @@ Zaman en değerli sermayendir; onu hak etmeyenlerin eline bırakma. Enerjini kor
         title2_gold: "kendi içinde ara.",
         lines: [
           "İnsanlar dağlara, deniz kıyılarına kaçar.",
-          "Oysa hiçbir yer kendi zihninden",
-          "daha sakin ve huzurlu olamaz.",
+          "Oysa hiçbir yer kendi zihninden daha sakin olamaz.",
           "",
           "Kendi iç odana çekil ve dinlen."
         ],
@@ -633,11 +652,9 @@ Zaman en değerli sermayendir; onu hak etmeyenlerin eline bırakma. Enerjini kor
         title1: "Olaylara etiket yapıştırmayı",
         title2_gold: "hemen bırak.",
         lines: [
-          "Bu 'iyi' veya bu 'kötü' deme.",
-          "Olaylar sadece olaydır.",
+          "Bu 'iyi' veya bu 'kötü' deme. Olaylar sadece olaydır.",
           "",
-          "Onlara yüklediğin sıfatları silersen,",
-          "zihnindeki tüm karmaşa son bulur."
+          "Onlara yüklediğin sıfatları silersen zihnindeki tüm karmaşa son bulur."
         ],
         author: "— EPİKTETOS"
       },
@@ -647,11 +664,9 @@ Zaman en değerli sermayendir; onu hak etmeyenlerin eline bırakma. Enerjini kor
         title1: "Gereksiz arzuları buda,",
         title2_gold: "ruhunu hafiflet.",
         lines: [
-          "Ne kadar çok şeye bağlanırsan,",
-          "o kadar çok şeyin kölesi olursun.",
+          "Ne kadar çok şeye bağlanırsan, o kadar çok şeyin kölesi olursun.",
           "",
-          "Azla yetinmeyi bilen insan,",
-          "dünyanın en zengin imparatorudur."
+          "Azla yetinmeyi bilen, dünyanın en zengin imparatorudur."
         ],
         author: "— SENECA"
       },
@@ -661,8 +676,7 @@ Zaman en değerli sermayendir; onu hak etmeyenlerin eline bırakma. Enerjini kor
         title1: "Geçmişin hüznü ve geleceğin",
         title2_gold: "endişesinden sıyrıl.",
         lines: [
-          "Dün öldü, yarın henüz doğmadı.",
-          "Sahip olduğun tek gerçek şu andır.",
+          "Dün öldü, yarın henüz doğmadı. Sahip olduğun tek gerçek şu andır.",
           "",
           "Şimdiyi onurlandır ve hakkını ver."
         ],
@@ -686,9 +700,8 @@ Huzur dış koşulların mükemmelliği değildir; fırtınanın ortasında bile
 #zihindoktrini #içhuzur #dinginlik #meditasyon #felsefe #stoacılık`
   },
   {
-    id: "carousel_07_resilience",
     cover: {
-      tag: "DİRENÇ VE DÜŞÜŞ",
+      seriesTitle: "DOKTRİN SERİSİ #07",
       line1: "DÜŞTÜĞÜNDE YENİDEN",
       line2_gold: "ÇOK DAHA GÜÇLÜ KALKMANIN",
       line3: "4 ASİL",
@@ -702,12 +715,9 @@ Huzur dış koşulların mükemmelliği değildir; fırtınanın ortasında bile
         title1: "Yenilgi yoktur,",
         title2_gold: "yalnızca tecrübe vardır.",
         lines: [
-          "Hata yaptığında kendine kızma.",
-          "Bir kumandan gibi haritayı aç,",
-          "nerede açık verdiğini gör ve düzelt.",
+          "Hata yaptığında kendine kızma. Bir kumandan gibi haritayı aç ve ders çıkar.",
           "",
-          "Kaybettiğinde aldığın ders,",
-          "en büyük zaferinden değerlidir."
+          "Kaybettiğinde aldığın ders, en büyük zaferinden değerlidir."
         ],
         author: "— MARCUS AURELIUS"
       },
@@ -717,10 +727,9 @@ Huzur dış koşulların mükemmelliği değildir; fırtınanın ortasında bile
         title1: "Geçmişe dövünmek",
         title2_gold: "zaman kaybıdır.",
         lines: [
-          "Dökülen süte ağlamak ahmaklıktır.",
-          "Dünü değiştiremezsin ama",
-          "bugün alacağın kararla geleceği",
-          "yeniden inşa edebilirsin."
+          "Dökülen süte ağlamak ahmaklıktır. Dünü değiştiremezsin ama",
+          "",
+          "bugün alacağın kararla geleceği yeniden inşa edebilirsin."
         ],
         author: "— SENECA"
       },
@@ -731,8 +740,7 @@ Huzur dış koşulların mükemmelliği değildir; fırtınanın ortasında bile
         title2_gold: "onur madalyası olarak taşı.",
         lines: [
           "Savaşmayan insan yara almaz.",
-          "Yara izlerin, hayatınla cesurca",
-          "yüzleştiğinin kanıtıdır.",
+          "Yara izlerin, hayatınla cesurca yüzleştiğinin kanıtıdır.",
           "",
           "Başını dik tut."
         ],
@@ -744,9 +752,7 @@ Huzur dış koşulların mükemmelliği değildir; fırtınanın ortasında bile
         title1: "Kaç kez düştüğün değil,",
         title2_gold: "kaç kez kalktığın önemlidir.",
         lines: [
-          "Gerçek güç, her yıkılışta",
-          "tozlarını silkeleyip tebessümle",
-          "tekrar ayağa kalkabilmektir.",
+          "Gerçek güç, her yıkılışta tozlarını silkeleyip tebessümle tekrar ayağa kalkmaktır.",
           "",
           "Yol seni bekliyor."
         ],
@@ -770,9 +776,8 @@ Düşmek insanidir; yerde kalmak ise bir seçimdir. Güçlü bir ruhu hiçbir ye
 #zihindoktrini #direnç #aslavazgeçme #mücadele #karakter #stoic`
   },
   {
-    id: "carousel_08_anxiety_cure",
     cover: {
-      tag: "KAYGIYI SİLMEK",
+      seriesTitle: "DOKTRİN SERİSİ #08",
       line1: "GELECEK KORKUSU VE",
       line2_gold: "KAYGIYI KÖKÜNDEN SÖKEN",
       line3: "4 STOACI",
@@ -787,8 +792,7 @@ Düşmek insanidir; yerde kalmak ise bir seçimdir. Güçlü bir ruhu hiçbir ye
         title2_gold: "asla gerçekleşmeyecek.",
         lines: [
           "Zihnin sürekli bir tehlike simülatörü gibi çalışır.",
-          "Olmayacak felaketlerin yükünü şimdiden",
-          "omuzlarına yüklemeyi bırak.",
+          "Olmayacak felaketlerin yükünü omuzlarına yüklemeyi bırak.",
           "",
           "Gereksiz endişe enerjini tüketir."
         ],
@@ -800,10 +804,9 @@ Düşmek insanidir; yerde kalmak ise bir seçimdir. Güçlü bir ruhu hiçbir ye
         title1: "Başına gelebilecek en kötü şeyi düşün,",
         title2_gold: "ve onunla barış.",
         lines: [
-          "En kötü ne olabilir?",
-          "Parasız kalmak mı, reddedilmek mi?",
-          "Ruhunu kaybetmediğin sürece",
-          "her şeyi yeniden inşa edebilirsin."
+          "En kötü ne olabilir? Parasız kalmak mı, reddedilmek mi?",
+          "",
+          "Ruhunu kaybetmediğin sürece her şeyi yeniden inşa edebilirsin."
         ],
         author: "— EPİKTETOS"
       },
@@ -813,9 +816,7 @@ Düşmek insanidir; yerde kalmak ise bir seçimdir. Güçlü bir ruhu hiçbir ye
         title1: "Sonuca değil,",
         title2_gold: "kendi çabana odaklan.",
         lines: [
-          "Bir okçu oku yaydan fırlatana kadar",
-          "her şeyi kontrol edebilir;",
-          "ok havada iken rüzgar kontrol dışıdır.",
+          "Bir okçu oku fırlatana kadar her şeyi kontrol edebilir; ok havada iken rüzgar kontrol dışıdır.",
           "",
           "Sen sadece atışını mükemmel yap."
         ],
@@ -827,8 +828,7 @@ Düşmek insanidir; yerde kalmak ise bir seçimdir. Güçlü bir ruhu hiçbir ye
         title1: "Gelecekteki sen,",
         title2_gold: "bugünkünden çok daha güçlü olacak.",
         lines: [
-          "Zorluklar geldiğinde, onlarla baş edecek",
-          "akıl ve direnç de seninle birlikte büyüyecek.",
+          "Zorluklar geldiğinde, onlarla baş edecek akıl ve direnç de seninle birlikte büyüyecek.",
           "",
           "Kendi dirayetine güven."
         ],
@@ -852,9 +852,8 @@ Kaygı, henüz var olmayan bir gölgeyle savaşmaktır. Zihnini o gölgelerden k
 #zihindoktrini #kaygı #korku #anksiyete #stoacılık #psikoloji #huzur`
   },
   {
-    id: "carousel_09_authenticity",
     cover: {
-      tag: "ASALET VE DURUŞ",
+      seriesTitle: "DOKTRİN SERİSİ #09",
       line1: "SÖZLERİ DEĞİL",
       line2_gold: "KARAKTERİ KONUŞTURMANIN",
       line3: "4 ASİL",
@@ -868,11 +867,9 @@ Kaygı, henüz var olmayan bir gölgeyle savaşmaktır. Zihnini o gölgelerden k
         title1: "Erdemini bir vitrin gibi",
         title2_gold: "sergilemekten vazgeç.",
         lines: [
-          "İyilik yaparken alkış arayanlar,",
-          "iyilik değil ticaret yapmaktadır.",
+          "İyilik yaparken alkış arayanlar ticaret yapmaktadır.",
           "",
-          "Gizlice ve sessizce iyi ol.",
-          "Asıl büyüklük görünmez olandır."
+          "Gizlice ve sessizce iyi ol. Asıl büyüklük görünmez olandır."
         ],
         author: "— MARCUS AURELIUS"
       },
@@ -882,8 +879,7 @@ Kaygı, henüz var olmayan bir gölgeyle savaşmaktır. Zihnini o gölgelerden k
         title1: "Yalnızken nasıl davranıyorsan,",
         title2_gold: "gerçekte o insansın.",
         lines: [
-          "Kimsenin seni görmediği anlarda",
-          "ilkelerine sadık kalabiliyor musun?",
+          "Kimsenin seni görmediği anlarda ilkelerine sadık kalabiliyor musun?",
           "",
           "Karakter, karanlıkta ne yaptığındır."
         ],
@@ -895,11 +891,9 @@ Kaygı, henüz var olmayan bir gölgeyle savaşmaktır. Zihnini o gölgelerden k
         title1: "Rüzgara göre yön değiştiren",
         title2_gold: "bir bukalemun olma.",
         lines: [
-          "Ortama göre şekil alan insanlar",
-          "asla saygı görmez.",
+          "Ortama göre şekil alan insanlar asla saygı görmez.",
           "",
-          "İlkelerin çelikten olsun;",
-          "dünya sana uysun, sen dünyaya değil."
+          "İlkelerin çelikten olsun; dünya sana uysun, sen dünyaya değil."
         ],
         author: "— EPİKTETOS"
       },
@@ -909,8 +903,7 @@ Kaygı, henüz var olmayan bir gölgeyle savaşmaktır. Zihnini o gölgelerden k
         title1: "Zararına olsa bile",
         title2_gold: "doğrudan ve adaletten şaşma.",
         lines: [
-          "Kısa vadeli menfaat için karakterini satan,",
-          "ömür boyu taşıyacağı bir leke satın alır.",
+          "Kısa vadeli menfaat için karakterini satan, ömür boyu leke taşır.",
           "",
           "Doğru olanı yap, gerisini kadere bırak."
         ],
@@ -934,9 +927,8 @@ Kaygı, henüz var olmayan bir gölgeyle savaşmaktır. Zihnini o gölgelerden k
 #zihindoktrini #karakter #dürüstlük #asalet #stoacılık #ahlak`
   },
   {
-    id: "carousel_10_self_mastery",
     cover: {
-      tag: "ÖZ HÜKÜMRANLIK",
+      seriesTitle: "DOKTRİN SERİSİ #10",
       line1: "KENDİ HAYATININ",
       line2_gold: "GERÇEK VE TEK EFENDİSİ",
       line3: "OLMANIN",
@@ -950,12 +942,9 @@ Kaygı, henüz var olmayan bir gölgeyle savaşmaktır. Zihnini o gölgelerden k
         title1: "Başkalarının beklentilerini",
         title2_gold: "karşılamak için yaşama.",
         lines: [
-          "Ailenin, toplumun ya da çevrenin",
-          "sana biçtiği rolleri sorgula.",
+          "Toplumun sana biçtiği rolleri sorgula. Kendi ilkelerini kendin belirle.",
           "",
-          "Kendi ilkelerini kendin belirle.",
-          "Başkalarının çizdiği yolda",
-          "asla kendi zirvene varamazsın."
+          "Başkalarının çizdiği yolda asla kendi zirvene varamazsın."
         ],
         author: "— EPİKTETOS"
       },
@@ -965,11 +954,9 @@ Kaygı, henüz var olmayan bir gölgeyle savaşmaktır. Zihnini o gölgelerden k
         title1: "Tutkularının kölesi değil,",
         title2_gold: "efendisi ol.",
         lines: [
-          "Açgözlülük, hırs ve bağımlılıklar",
-          "zihnini ele geçirdiğinde özgürlüğün biter.",
+          "Açgözlülük ve bağımlılıklar zihnini ele geçirdiğinde özgürlüğün biter.",
           "",
-          "Nefsini terbiye eden insan,",
-          "bütün ordulardan daha güçlüdür."
+          "Nefsini terbiye eden insan, bütün ordulardan daha güçlüdür."
         ],
         author: "— SENECA"
       },
@@ -979,9 +966,7 @@ Kaygı, henüz var olmayan bir gölgeyle savaşmaktır. Zihnini o gölgelerden k
         title1: "Her gece kendine",
         title2_gold: "hesap ver.",
         lines: [
-          "Yatağa girmeden önce sor:",
-          "'Bugün hangi hatamı düzelttim?",
-          "Hangi erdemi geliştirdim?'",
+          "Yatağa girmeden önce sor: 'Bugün hangi hatamı düzelttim?'",
           "",
           "Kendini yargılayan insanı kimse yargılayamaz."
         ],
@@ -994,8 +979,7 @@ Kaygı, henüz var olmayan bir gölgeyle savaşmaktır. Zihnini o gölgelerden k
         title2_gold: "lekesiz bir miras bırak.",
         lines: [
           "Mermer heykeller ufalanır, altınlar erir.",
-          "Ancak onurlu ve sarsılmaz bir karakterin mirası",
-          "nesiller boyu yaşamaya devam eder.",
+          "Ancak onurlu bir karakterin mirası nesiller boyu yaşar.",
           "",
           "Kendi efsaneni yaz."
         ],
