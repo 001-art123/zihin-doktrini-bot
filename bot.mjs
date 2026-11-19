@@ -24,17 +24,20 @@ if (!fs.existsSync(tempDir)) {
   fs.mkdirSync(tempDir, { recursive: true });
 }
 
-// Calculate deterministic day of year for progressive content rotation
+// ----------------------------------------------------
+// BAŞLANGIÇ ÇIPASI (STARTING ANCHOR): 20 KASIM 2026 (GÜN 0)
+// Böylece ilk paylaşım kesinlikle ZİHİN DOKTRİNİ #001 olur.
+// ----------------------------------------------------
+const anchorDate = new Date('2026-11-20T00:00:00+03:00');
 const now = new Date();
-const startOfYear = new Date(now.getFullYear(), 0, 0);
-const diff = now - startOfYear;
-const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+const diffMs = now.getTime() - anchorDate.getTime();
+const dayIndex = Math.max(0, Math.floor(diffMs / (1000 * 60 * 60 * 24)));
 
 async function run() {
   console.log(`========================================`);
   console.log(`🏛 ZİHİN DOKTRİNİ 7/24 BULUT YAYIN BOTU`);
   console.log(`⏰ Hedef Seans: ${slot.toUpperCase()}`);
-  console.log(`📅 Gün İndeksi: ${dayOfYear}`);
+  console.log(`📅 Gün İndeksi (Day Index): ${dayIndex} (Başlangıç: 20 Kasım 2026)`);
   console.log(`========================================\n`);
 
   if (slot === 'noon') {
@@ -42,7 +45,7 @@ async function run() {
     // KURAL: HER GÜN ÖĞLEN 12:30 SEANSI KESİNLİKLE 5 SLAYTLIK KAYDIRMALI KARUSELDİR!
     // ----------------------------------------------------
     console.log('📌 ÖĞLE SEANSI (12:30): 5 Slaytlık Kaydırmalı Karusel Hazırlanıyor...');
-    const carouselIndex = dayOfYear % CAROUSEL_DOCTRINES.length;
+    const carouselIndex = dayIndex % CAROUSEL_DOCTRINES.length;
     const selectedCarousel = CAROUSEL_DOCTRINES[carouselIndex];
 
     console.log(`Seçilen Karusel Paketi: "${selectedCarousel.cover.line1} ${selectedCarousel.cover.line2_gold}"`);
@@ -61,14 +64,16 @@ async function run() {
   } else {
     // ----------------------------------------------------
     // SABAH (08:30) VE AKŞAM (20:30): TEKLİ SİNEMATİK DOKTRİN KARTI
+    // Sabah: Doktrin #001 (day 0, sabah = 0)
+    // Akşam: Doktrin #002 (day 0, akşam = 1)
+    // Ertesi Sabah: Doktrin #003 (day 1, sabah = 2) ...
     // ----------------------------------------------------
     console.log(`📌 ${slot.toUpperCase()} SEANSI: Heykelli Sinematik Doktrin Kartı Hazırlanıyor...`);
-    // Morning gets dayOfYear, Evening gets (dayOfYear + 1) offset so they differ
-    const offset = slot === 'evening' ? 1 : 0;
-    const docIndex = (dayOfYear * 2 + offset) % SINGLE_DOCTRINES.length;
+    const isEvening = slot === 'evening';
+    const docIndex = (dayIndex * 2 + (isEvening ? 1 : 0)) % SINGLE_DOCTRINES.length;
     const selectedDoc = SINGLE_DOCTRINES[docIndex];
 
-    console.log(`Seçilen Doktrin: "${selectedDoc.title_gold} ${selectedDoc.title_white}"`);
+    console.log(`Seçilen Doktrin [İndeks ${docIndex}]: "${selectedDoc.title_gold} ${selectedDoc.title_white}"`);
     const cardPath = path.join(tempDir, 'single_card.jpg');
     await renderSingleStatueCard(selectedDoc, cardPath);
     console.log(`Görsel render edildi: ${cardPath}`);

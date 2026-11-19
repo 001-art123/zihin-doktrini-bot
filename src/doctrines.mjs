@@ -91,6 +91,91 @@ Kendini savunmak, her iddiaya cevap yetiştirmek zorunda değilsin. Zihinsel gü
 
 • • •
 #zihindoktrini #seneca #sessizlik #bilgelik #felsefe #zihin`
+  },
+  {
+    topic: "YALIN KARAKTER",
+    title_gold: "İYİ BİR İNSANIN NASIL OLMASI GEREKTİĞİNİ TARTIŞMAKTAN VAZGEÇ,",
+    title_white: "BİZZAT O İNSAN OL.",
+    doctrine: "Sürekli ahlaktan bahseden ama ahlaksızca yaşayan, sürekli disiplin anlatan ama tembellik yapanlardan olma. Felsefe kelimelerle değil, eylemlerle yaşanır. Dünyayı değiştirmek istiyorsan önce kendi duruşunu kusursuz kıl.",
+    quote: "— MARCUS AURELIUS",
+    caption: `🏛 ZİHİN DOKTRİNİ #006
+İyi bir insanın nasıl olması gerektiğini tartışmaktan vazgeç, bizzat o insan ol.
+
+Kelimeler ucuzdur, eylemler ise gerçeğin ta kendisidir. Başkalarına akıl vermek yerine karakterinle örnek ol.
+
+📍 Takip et: @zihindoktrini
+💾 Hatırlamak için KAYDET.
+
+• • •
+#zihindoktrini #marcusaurelius #karakter #eylem #stoic #felsefe`
+  },
+  {
+    topic: "İÇ KALENİN GÜCÜ",
+    title_gold: "HİÇ KİMSE SENİN İZNİN OLMADAN",
+    title_white: "SENİ AŞAĞILAYAMAZ VEYA İNCİTEMEZ.",
+    doctrine: "Birisi sana hakaret ettiğinde, incinip incinmeyeceğini belirleyen tek şey sensin. Eğer hakareti ciddiye almazsan rüzgar gibi geçip gider. Zihnini zırhla kapla; kimsenin haddi olmayan düşüncelerinin iç dünyana sızmasına izin verme.",
+    quote: "— EPİKTETOS",
+    caption: `🏛 ZİHİN DOKTRİNİ #007
+Hiç kimse senin iznin olmadan seni aşağılayamaz veya incitemez.
+
+Bir köpeğin havlamasına kırılmazsın; öyleyse cahil bir insanın sözleri neden seni sarsın? Gücünü başkalarının dudaklarına emanet etme.
+
+📍 Takip et: @zihindoktrini
+💾 Zihnini korumak için KAYDET.
+
+• • •
+#zihindoktrini #epiktetos #içhuzur #psikoloji #özsaygı`
+  },
+  {
+    topic: "ÖLÜMLÜLÜK BİLİNCİ",
+    title_gold: "HER SABAH KENDİNE FISILDA:",
+    title_white: "BU GÜN HAYATININ SON GÜNÜ OLABİLİR.",
+    doctrine: "Memento Mori: Hayatı sonsuz sananlar en büyük zaman israfçılarıdır. Ölüm korkulacak bir son değil; her anı onurlu, kararlı ve net yaşamak için en keskin pusuladır. Ertelediğin her şey, aslında vazgeçtiğin hayatındır.",
+    quote: "— SENECA",
+    caption: `🏛 ZİHİN DOKTRİNİ #008
+Her sabah kendine fısılda: Bu gün hayatının son günü olabilir.
+
+Ölüm bilinci seni karamsar yapmaz; aksine küçük meseleleri çöpe atıp gerçekten neyin önemli olduğunu gösterir.
+
+📍 Takip et: @zihindoktrini
+💾 Derin farkındalık için KAYDET.
+
+• • •
+#zihindoktrini #mementomori #seneca #farkındalık #yaşam`
+  },
+  {
+    topic: "DİSİPLİN KANUNU",
+    title_gold: "DİSİPLİNİN AĞIRLIĞI GRAMLARLA,",
+    title_white: "PİŞMANLIĞIN AĞIRLIĞI TONLARLA ÖLÇÜLÜR.",
+    doctrine: "Bugün zor geleni yapmak seni yarın özgürleştirir. Kolay olanı seçip ertelemek ise zihninde taşınması imkansız bir pişmanlık yükü biriktirir. Zorluğu göğüsle; acı geçicidir, karakter kalıcıdır.",
+    quote: "— MARCUS AURELIUS",
+    caption: `🏛 ZİHİN DOKTRİNİ #009
+Disiplinin ağırlığı gramlarla, pişmanlığın ağırlığı tonlarla ölçülür.
+
+Kısa vadeli rahatlık, uzun vadeli esarettir. Kendi zihnini fethetmeyen insan hiçbir şeyi yönetemez.
+
+📍 Takip et: @zihindoktrini
+💾 Disiplinini korumak için KAYDET.
+
+• • •
+#zihindoktrini #disiplin #irade #başarı #stoacılık`
+  },
+  {
+    topic: "ARINMA VE SÜKUNET",
+    title_gold: "HİÇBİR ŞEYE İHTİYACI OLMAYAN İNSAN,",
+    title_white: "DÜNYANIN EN ZENGİN İNSANIDIR.",
+    doctrine: "Zenginlik mülklerin çokluğuyla değil, arzuların azlığıyla ölçülür. Dışarıdan gelecek onaylara, eşyalara ve alkışlara muhtaç değilsen, hiçbir güç seni dize getiremez. Gerçek zenginlik kendi kendine yetebilmektir.",
+    quote: "— SENECA",
+    caption: `🏛 ZİHİN DOKTRİNİ #010
+Hiçbir şeye ihtiyacı olmayan insan, dünyanın en zengin insanıdır.
+
+Daha fazlasına sahip olmak için ruhunu satanlar asla doymaz. Zihnini sadeleştir, gerçek özgürlüğe kavuş.
+
+📍 Takip et: @zihindoktrini
+💾 Zihnini arındırmak için KAYDET.
+
+• • •
+#zihindoktrini #seneca #özgürlük #sadelik #bilgelik`
   }
 ];
 
