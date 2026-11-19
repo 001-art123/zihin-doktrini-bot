@@ -26,7 +26,7 @@ if (!fs.existsSync(tempDir)) {
 
 // ----------------------------------------------------
 // BAŞLANGIÇ ÇIPASI (STARTING ANCHOR): 20 KASIM 2026 (GÜN 0)
-// Böylece ilk paylaşım kesinlikle ZİHİN DOKTRİNİ #001 olur.
+// Tam 10 gün boyunca sıfır tekrar; her seans tamamen benzersiz!
 // ----------------------------------------------------
 const anchorDate = new Date('2026-11-20T00:00:00+03:00');
 const now = new Date();
@@ -43,12 +43,13 @@ async function run() {
   if (slot === 'noon') {
     // ----------------------------------------------------
     // KURAL: HER GÜN ÖĞLEN 12:30 SEANSI KESİNLİKLE 5 SLAYTLIK KAYDIRMALI KARUSELDİR!
+    // 10 gün boyunca 10 farklı dev karusel serisi döner.
     // ----------------------------------------------------
     console.log('📌 ÖĞLE SEANSI (12:30): 5 Slaytlık Kaydırmalı Karusel Hazırlanıyor...');
     const carouselIndex = dayIndex % CAROUSEL_DOCTRINES.length;
     const selectedCarousel = CAROUSEL_DOCTRINES[carouselIndex];
 
-    console.log(`Seçilen Karusel Paketi: "${selectedCarousel.cover.line1} ${selectedCarousel.cover.line2_gold}"`);
+    console.log(`Seçilen Karusel [Paket ${carouselIndex + 1}/10]: "${selectedCarousel.cover.line1} ${selectedCarousel.cover.line2_gold}"`);
     const slidePaths = await renderCarouselSlides(selectedCarousel, tempDir);
     console.log(`Slaytlar render edildi: ${slidePaths.length} adet 1080x1350 görsel`);
 
@@ -64,23 +65,36 @@ async function run() {
   } else {
     // ----------------------------------------------------
     // SABAH (08:30) VE AKŞAM (20:30): TEKLİ SİNEMATİK DOKTRİN KARTI
-    // Sabah: Doktrin #001 (day 0, sabah = 0)
-    // Akşam: Doktrin #002 (day 0, akşam = 1)
-    // Ertesi Sabah: Doktrin #003 (day 1, sabah = 2) ...
+    // 10 gün boyunca 20 farklı benzersiz doktrin (#001'den #020'ye)
     // ----------------------------------------------------
     console.log(`📌 ${slot.toUpperCase()} SEANSI: Heykelli Sinematik Doktrin Kartı Hazırlanıyor...`);
     const isEvening = slot === 'evening';
-    const docIndex = (dayIndex * 2 + (isEvening ? 1 : 0)) % SINGLE_DOCTRINES.length;
+    const globalSeq = (dayIndex * 2 + (isEvening ? 1 : 0));
+    const docIndex = globalSeq % SINGLE_DOCTRINES.length;
     const selectedDoc = SINGLE_DOCTRINES[docIndex];
 
-    console.log(`Seçilen Doktrin [İndeks ${docIndex}]: "${selectedDoc.title_gold} ${selectedDoc.title_white}"`);
+    const postNumber = String(globalSeq + 1).padStart(3, '0');
+    console.log(`Seçilen Doktrin [No: #${postNumber}]: "${selectedDoc.title_gold} ${selectedDoc.title_white}"`);
+
+    const fullCaption = `🏛 ZİHİN DOKTRİNİ #${postNumber}
+${selectedDoc.title_gold} ${selectedDoc.title_white}
+
+${selectedDoc.captionSummary}
+
+📍 Zihin disiplini için takip et: @zihindoktrini
+💾 İleride tekrar hatırlamak için bu gönderiyi KAYDET.
+👥 Zihnini güçlendirmesini istediğin bir dostunla PAYLAŞ.
+
+• • •
+#zihindoktrini #stoacılık #felsefe #özdisiplin #irade #zihin #kişiselgelişim #motivasyon #stoic #bilgelik`;
+
     const cardPath = path.join(tempDir, 'single_card.jpg');
     await renderSingleStatueCard(selectedDoc, cardPath);
     console.log(`Görsel render edildi: ${cardPath}`);
 
     const result = await publishSinglePost(
       cardPath,
-      selectedDoc.caption,
+      fullCaption,
       PAGE_TOKEN,
       PAGE_ID,
       IG_USER_ID
