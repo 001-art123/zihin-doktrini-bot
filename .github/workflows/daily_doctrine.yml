@@ -1,0 +1,62 @@
+name: Zihin Doktrini 24/7 Autonomous Publisher
+
+on:
+  schedule:
+    # Türkiye Saati: UTC + 3
+    # 05:30 UTC -> 08:30 TR (Sabah Doktrin Kartı)
+    - cron: '30 5 * * *'
+    # 09:30 UTC -> 12:30 TR (Öğle Kaydırmalı Karuseli)
+    - cron: '30 9 * * *'
+    # 17:30 UTC -> 20:30 TR (Akşam Doktrin Kartı)
+    - cron: '30 17 * * *'
+
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: 'Yayınlanacak Seans (morning, noon, evening)'
+        required: true
+        default: 'noon'
+        type: choice
+        options:
+          - morning
+          - noon
+          - evening
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Kodu Çek (Checkout)
+        uses: actions/checkout@v4
+
+      - name: Node.js Kur (Setup Node)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Bağımlılıkları Kur (Install Dependencies)
+        run: npm install
+
+      - name: Seansı Belirle (Determine Slot)
+        id: determine_slot
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "SLOT=${{ github.event.inputs.slot }}" >> $GITHUB_ENV
+          else
+            HOUR=$(date -u +%H)
+            if [ "$HOUR" -lt "08" ]; then
+              echo "SLOT=morning" >> $GITHUB_ENV
+            elif [ "$HOUR" -lt "15" ]; then
+              echo "SLOT=noon" >> $GITHUB_ENV
+            else
+              echo "SLOT=evening" >> $GITHUB_ENV
+            fi
+          fi
+
+      - name: Gönderiyi Üret ve Meta'da Yayınla (Execute Bot)
+        env:
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+          PAGE_ID: ${{ secrets.PAGE_ID }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: node bot.mjs --slot $SLOT
