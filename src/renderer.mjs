@@ -1,8 +1,28 @@
-import { createCanvas, loadImage } from '@napi-rs/canvas';
+import { createCanvas, loadImage, GlobalFonts } from '@napi-rs/canvas';
 import fs from 'fs';
 import path from 'path';
 
 const STATUE_PATH = path.resolve('assets/statue.jpg');
+const FONT_DIR = path.resolve('assets/fonts');
+
+// Register bundled fonts for 100% guaranteed identical rendering on Linux/Windows/Mac
+if (fs.existsSync(path.join(FONT_DIR, 'Georgia-Bold.ttf'))) {
+  GlobalFonts.registerFromPath(path.join(FONT_DIR, 'Georgia-Bold.ttf'), 'StoicSerifBold');
+}
+if (fs.existsSync(path.join(FONT_DIR, 'Georgia.ttf'))) {
+  GlobalFonts.registerFromPath(path.join(FONT_DIR, 'Georgia.ttf'), 'StoicSerif');
+}
+if (fs.existsSync(path.join(FONT_DIR, 'Arial-Bold.ttf'))) {
+  GlobalFonts.registerFromPath(path.join(FONT_DIR, 'Arial-Bold.ttf'), 'StoicSansBold');
+}
+if (fs.existsSync(path.join(FONT_DIR, 'Arial.ttf'))) {
+  GlobalFonts.registerFromPath(path.join(FONT_DIR, 'Arial.ttf'), 'StoicSans');
+}
+
+const FONT_SERIF_BOLD = 'StoicSerifBold, Georgia, serif';
+const FONT_SERIF = 'StoicSerif, Georgia, serif';
+const FONT_SANS_BOLD = 'StoicSansBold, Arial, sans-serif';
+const FONT_SANS = 'StoicSans, Arial, sans-serif';
 
 function drawBaseStatueCard(ctx, w, h, statueImg, badgeText, rightText) {
   // 1. Black BG
@@ -60,7 +80,7 @@ function drawBaseStatueCard(ctx, w, h, statueImg, badgeText, rightText) {
   ctx.strokeStyle = '#D4AF37';
   ctx.stroke();
 
-  ctx.font = '800 24px serif';
+  ctx.font = `800 24px ${FONT_SERIF_BOLD}`;
   ctx.fillStyle = '#D4AF37';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
@@ -68,11 +88,11 @@ function drawBaseStatueCard(ctx, w, h, statueImg, badgeText, rightText) {
 
   // Header Meta
   ctx.textAlign = 'left';
-  ctx.font = '800 22px serif';
+  ctx.font = `800 22px ${FONT_SERIF_BOLD}`;
   ctx.fillStyle = '#F5F5F5';
   ctx.fillText(badgeText, 178, 125);
 
-  ctx.font = '600 13px sans-serif';
+  ctx.font = `600 13px ${FONT_SANS}`;
   ctx.fillStyle = '#8E8E93';
   ctx.fillText('ZİHİN DOKTRİNİ • STOACILIK', 178, 150);
 
@@ -92,7 +112,7 @@ function drawBaseStatueCard(ctx, w, h, statueImg, badgeText, rightText) {
     ctx.stroke();
 
     ctx.textAlign = 'center';
-    ctx.font = '700 15px serif';
+    ctx.font = `700 15px ${FONT_SERIF_BOLD}`;
     ctx.fillStyle = '#D4AF37';
     ctx.fillText(rightText, tagX + (tagW / 2), tagY + (tagH / 2) + 1);
   }
@@ -115,7 +135,7 @@ function drawBaseStatueCard(ctx, w, h, statueImg, badgeText, rightText) {
 
   // Footer Handle
   ctx.textAlign = 'left';
-  ctx.font = '800 22px sans-serif';
+  ctx.font = `800 22px ${FONT_SANS_BOLD}`;
   ctx.fillStyle = '#FFFFFF';
   ctx.fillText('@zihindoktrini', 115, 1265);
 }
@@ -136,27 +156,27 @@ export async function renderSingleStatueCard(doc, outputPath) {
 
   // Body
   ctx.textAlign = 'center';
-  ctx.font = 'italic 110px serif';
+  ctx.font = `italic 110px ${FONT_SERIF}`;
   ctx.fillStyle = 'rgba(212, 175, 55, 0.35)';
   ctx.fillText('“', w / 2, 420);
 
   // Line 1
-  ctx.font = '600 44px serif';
+  ctx.font = `600 44px ${FONT_SERIF}`;
   ctx.fillStyle = '#E5E5EA';
   ctx.fillText(doc.line1, w / 2, 510);
 
   // Line 2 (Highlighted)
-  ctx.font = '700 48px serif';
+  ctx.font = `700 48px ${FONT_SERIF_BOLD}`;
   ctx.fillStyle = '#D4AF37';
   ctx.fillText(doc.line2_highlight, w / 2, 580);
 
   // Line 3
-  ctx.font = '600 44px serif';
+  ctx.font = `600 44px ${FONT_SERIF}`;
   ctx.fillStyle = '#E5E5EA';
   ctx.fillText(doc.line3, w / 2, 665);
 
   // Line 4 (Gold Accent)
-  ctx.font = '800 50px serif';
+  ctx.font = `800 50px ${FONT_SERIF_BOLD}`;
   ctx.fillStyle = '#FFD700';
   ctx.fillText(doc.line4_gold, w / 2, 735);
 
@@ -169,19 +189,19 @@ export async function renderSingleStatueCard(doc, outputPath) {
   ctx.fillRect((w / 2) - 60, 810, 120, 3);
 
   // Author
-  ctx.font = '800 30px serif';
+  ctx.font = `800 30px ${FONT_SERIF_BOLD}`;
   ctx.fillStyle = '#D4AF37';
   ctx.fillText(doc.author, w / 2, 875);
 
-  ctx.font = '500 17px sans-serif';
+  ctx.font = `500 17px ${FONT_SANS}`;
   ctx.fillStyle = '#9E9EA5';
   ctx.fillText(doc.authorTitle, w / 2, 915);
 
   // Footer CTA
   ctx.textAlign = 'right';
-  ctx.font = '600 18px sans-serif';
+  ctx.font = `600 18px ${FONT_SANS_BOLD}`;
   ctx.fillStyle = '#D4AF37';
-  ctx.fillText('Bu duruşu hikayende paylaş ➔', w - 115, 1265);
+  ctx.fillText('Bu duruşu hikayende paylaş >', w - 115, 1265);
 
   const jpegBuffer = canvas.toBuffer('image/jpeg', { quality: 0.95 });
   fs.writeFileSync(outputPath, jpegBuffer);
@@ -205,19 +225,19 @@ export async function renderCarouselSlides(carouselDoc, outputDir) {
   drawBaseStatueCard(ctx1, w, h, statueImg, 'DOKTRİN SERİSİ', carouselDoc.cover.seriesTitle);
 
   ctx1.textAlign = 'center';
-  ctx1.font = '800 36px serif';
+  ctx1.font = `800 36px ${FONT_SERIF_BOLD}`;
   ctx1.fillStyle = '#8E8E93';
   ctx1.fillText(carouselDoc.cover.line1, w / 2, 460);
 
-  ctx1.font = '900 68px serif';
+  ctx1.font = `900 68px ${FONT_SERIF_BOLD}`;
   ctx1.fillStyle = '#FFD700';
   ctx1.fillText(carouselDoc.cover.line2_gold, w / 2, 550);
 
-  ctx1.font = '800 36px serif';
+  ctx1.font = `800 36px ${FONT_SERIF_BOLD}`;
   ctx1.fillStyle = '#8E8E93';
   ctx1.fillText(carouselDoc.cover.line3, w / 2, 640);
 
-  ctx1.font = '800 62px serif';
+  ctx1.font = `800 62px ${FONT_SERIF_BOLD}`;
   ctx1.fillStyle = '#FFFFFF';
   ctx1.fillText(carouselDoc.cover.line4_white, w / 2, 725);
 
@@ -228,14 +248,14 @@ export async function renderCarouselSlides(carouselDoc, outputDir) {
   ctx1.fillStyle = divGrad;
   ctx1.fillRect((w / 2) - 80, 795, 160, 3);
 
-  ctx1.font = '500 22px sans-serif';
+  ctx1.font = `500 22px ${FONT_SANS}`;
   ctx1.fillStyle = '#A0A0A5';
   ctx1.fillText(carouselDoc.cover.sub, w / 2, 850);
 
   ctx1.textAlign = 'right';
-  ctx1.font = '700 20px sans-serif';
+  ctx1.font = `700 20px ${FONT_SANS_BOLD}`;
   ctx1.fillStyle = '#D4AF37';
-  ctx1.fillText("Kaydırın ➔", w - 115, 1265);
+  ctx1.fillText("Kaydırın >", w - 115, 1265);
 
   const p1 = path.join(outputDir, 'carousel_slide_1.jpg');
   fs.writeFileSync(p1, c1.toBuffer('image/jpeg', { quality: 0.95 }));
@@ -249,11 +269,11 @@ export async function renderCarouselSlides(carouselDoc, outputDir) {
     drawBaseStatueCard(ctx, w, h, statueImg, `KURAL ${i + 1} / 4`, s.tag);
 
     ctx.textAlign = 'center';
-    ctx.font = '700 24px serif';
+    ctx.font = `700 24px ${FONT_SERIF_BOLD}`;
     ctx.fillStyle = '#D4AF37';
     ctx.fillText(s.num, w / 2, 380);
 
-    ctx.font = '700 46px serif';
+    ctx.font = `700 46px ${FONT_SERIF_BOLD}`;
     ctx.fillStyle = '#FFFFFF';
     ctx.fillText(s.title1, w / 2, 460);
     ctx.fillStyle = '#FFD700';
@@ -262,7 +282,7 @@ export async function renderCarouselSlides(carouselDoc, outputDir) {
     ctx.fillStyle = '#D4AF37';
     ctx.fillRect((w / 2) - 40, 580, 80, 2.5);
 
-    ctx.font = '400 24px sans-serif';
+    ctx.font = `400 24px ${FONT_SANS}`;
     ctx.fillStyle = '#C7C7CC';
     let sY = 650;
     for (const line of s.lines) {
@@ -270,70 +290,71 @@ export async function renderCarouselSlides(carouselDoc, outputDir) {
       sY += 46;
     }
 
-    ctx.font = '700 20px serif';
+    ctx.font = `700 20px ${FONT_SERIF_BOLD}`;
     ctx.fillStyle = '#D4AF37';
     ctx.fillText(s.author, w / 2, 980);
 
     ctx.textAlign = 'right';
-    ctx.font = '600 18px sans-serif';
+    ctx.font = `600 18px ${FONT_SANS}`;
     ctx.fillStyle = '#8E8E93';
-    ctx.fillText(`${i + 1} / 4 ➔`, w - 115, 1265);
+    ctx.fillText(`${i + 1} / 4 >`, w - 115, 1265);
 
     const p = path.join(outputDir, `carousel_slide_${i + 2}.jpg`);
     fs.writeFileSync(p, c.toBuffer('image/jpeg', { quality: 0.95 }));
     slidePaths.push(p);
   }
 
-  // Slide 6 / Outro Summary
+  // Slide 6: Outro (CTA)
   const cOutro = createCanvas(w, h);
   const ctxOutro = cOutro.getContext('2d');
-  drawBaseStatueCard(ctxOutro, w, h, statueImg, 'KAPANIŞ İLKESİ', 'ÖZET');
+  drawBaseStatueCard(ctxOutro, w, h, statueImg, 'ZİHİN DOKTRİNİ', 'SON SÖZ');
 
   ctxOutro.textAlign = 'center';
-  ctxOutro.font = '700 22px serif';
+  ctxOutro.font = `700 22px ${FONT_SERIF_BOLD}`;
   ctxOutro.fillStyle = '#D4AF37';
-  ctxOutro.fillText("TEMEL DOKTRİN", w / 2, 380);
+  ctxOutro.fillText("KENDİ ZİHNİNİ FETHETMEYEN,", w / 2, 460);
 
-  const boxW = 860;
-  const boxH = 260;
-  const boxX = (w - boxW) / 2;
-  const boxY = 430;
+  ctxOutro.fillStyle = '#FFFFFF';
+  ctxOutro.fillText("HİÇBİR ŞEYİ FETHEDEMEZ.", w / 2, 510);
 
-  ctxOutro.fillStyle = 'rgba(212, 175, 55, 0.08)';
-  ctxOutro.strokeStyle = 'rgba(212, 175, 55, 0.4)';
-  ctxOutro.lineWidth = 1.5;
+  const divO = ctxOutro.createLinearGradient((w / 2) - 60, 0, (w / 2) + 60, 0);
+  divO.addColorStop(0, 'rgba(212, 175, 55, 0)');
+  divO.addColorStop(0.5, 'rgba(212, 175, 55, 0.9)');
+  divO.addColorStop(1, 'rgba(212, 175, 55, 0)');
+  ctxOutro.fillStyle = divO;
+  ctxOutro.fillRect((w / 2) - 60, 560, 120, 2.5);
+
+  ctxOutro.font = `italic 700 42px ${FONT_SERIF}`;
+  ctxOutro.fillStyle = '#FFD700';
+  ctxOutro.fillText("@zihindoktrini", w / 2, 650);
+
+  ctxOutro.font = `600 24px ${FONT_SANS}`;
+  ctxOutro.fillStyle = '#C7C7CC';
+  ctxOutro.fillText("Günde 3 kez Stoacı bilgelik,", w / 2, 730);
+  ctxOutro.fillText("çelik gibi bir irade ve sarsılmaz bir karakter.", w / 2, 775);
+
+  // Buttons Mockup in Outro
+  const btnW = 340;
+  const btnH = 65;
+  const btnX = (w - btnW) / 2;
+  const btnY = 860;
+
+  ctxOutro.fillStyle = 'rgba(212, 175, 55, 0.15)';
+  ctxOutro.strokeStyle = '#D4AF37';
+  ctxOutro.lineWidth = 1.8;
   ctxOutro.beginPath();
-  ctxOutro.roundRect(boxX, boxY, boxW, boxH, 16);
+  ctxOutro.roundRect(btnX, btnY, btnW, btnH, 12);
   ctxOutro.fill();
   ctxOutro.stroke();
 
-  ctxOutro.font = 'italic 700 42px serif';
-  ctxOutro.fillStyle = '#FFFFFF';
-  ctxOutro.fillText("“Kendi zihnini fethetmeyen,", w / 2, 530);
+  ctxOutro.font = `700 22px ${FONT_SANS_BOLD}`;
   ctxOutro.fillStyle = '#FFD700';
-  ctxOutro.fillText("hiçbir şeyi fethedemez.”", w / 2, 600);
-
-  ctxOutro.textAlign = 'left';
-  ctxOutro.font = '600 24px sans-serif';
-  const ctaItems = [
-    { icon: "💾", text: "Bu kuralları unutmamak için KAYDET." },
-    { icon: "👥", text: "Güçlü bir duruş kazanmasını istediğin DOSTUNA GÖNDER." },
-    { icon: "⚡️", text: "Zihnini disipline etmek için TAKİP ET: @zihindoktrini" }
-  ];
-
-  let ctaY = 770;
-  for (const item of ctaItems) {
-    ctxOutro.fillStyle = '#D4AF37';
-    ctxOutro.fillText(item.icon, 140, ctaY);
-    ctxOutro.fillStyle = '#F5F5F5';
-    ctxOutro.fillText(item.text, 190, ctaY);
-    ctaY += 65;
-  }
+  ctxOutro.fillText("BU DOKTRİNİ KAYDET", w / 2, btnY + 41);
 
   ctxOutro.textAlign = 'right';
-  ctxOutro.font = '600 18px sans-serif';
-  ctxOutro.fillStyle = '#D4AF37';
-  ctxOutro.fillText("Bu duruşu hikayende paylaş ➔", w - 115, 1265);
+  ctxOutro.font = `600 18px ${FONT_SANS}`;
+  ctxOutro.fillStyle = '#8E8E93';
+  ctxOutro.fillText("Tamamlandı", w - 115, 1265);
 
   const pOutro = path.join(outputDir, `carousel_slide_${carouselDoc.slides.length + 2}.jpg`);
   fs.writeFileSync(pOutro, cOutro.toBuffer('image/jpeg', { quality: 0.95 }));
