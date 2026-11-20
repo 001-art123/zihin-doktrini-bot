@@ -201,7 +201,7 @@ export async function renderSingleStatueCard(doc, outputPath) {
   ctx.textAlign = 'right';
   ctx.font = `600 18px ${FONT_SANS_BOLD}`;
   ctx.fillStyle = '#D4AF37';
-  ctx.fillText('Bu duruşu hikayende paylaş >', w - 115, 1265);
+  ctx.fillText('Bu duruşu arkadaşınla paylaş >', w - 115, 1265);
 
   const jpegBuffer = canvas.toBuffer('image/jpeg', { quality: 0.95 });
   fs.writeFileSync(outputPath, jpegBuffer);

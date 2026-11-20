@@ -86,7 +86,7 @@ ${selectedDoc.captionHook}
 
 📍 Zihin disiplini için takip et: @zihindoktrini
 💾 Zihninde tutmak için KAYDET.
-👥 Bu duruşu hikayende PAYLAŞ.
+👥 Bu duruşu arkadaşınla PAYLAŞ.
 
 • • •
 #zihindoktrini #stoacılık #${selectedDoc.author.replace(/[^a-zA-Z]/g, '').toLowerCase()} #felsefe #özdisiplin #zihniyet #motivasyon #bilgelik`;
